@@ -1,0 +1,19 @@
+{
+  "name": "brain-imaging",
+  "version": "1.0.0",
+  "description": "",
+  "main": "practice.js",
+  "scripts": {
+    "start": "node practice.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sukiraharris/Brain-Imaging.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sukiraharris/Brain-Imaging/issues"
+  },
+  "homepage": "https://github.com/sukiraharris/Brain-Imaging#readme"
+}
