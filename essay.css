@@ -1,0 +1,325 @@
+/* Single essay reading page */
+:root {
+  --paper: #f1ede7;
+  --ink: #1d1a19;
+  --muted: #3f3836;
+  --red: #9a1c22;
+}
+
+body {
+  background-color: var(--paper);
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.35  0 0 0 0 0.3  0 0 0 0 0.25  0 0 0 0.07 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+}
+
+.essay-main {
+  padding: clamp(28px, 5vh, 56px) clamp(20px, 4vw, 64px) clamp(48px, 8vh, 88px);
+}
+
+.essay-main a {
+  text-decoration: none;
+}
+
+/* ---------- Header ---------- */
+.es-head {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+  align-items: center;
+  gap: clamp(28px, 5vw, 80px);
+  max-width: 1180px;
+  margin: 0 auto clamp(40px, 6vh, 72px);
+}
+
+.es-eyebrow {
+  display: inline-block;
+  margin-bottom: 10px;
+  font-family: 'Courier Prime', 'Courier New', monospace;
+  font-size: 14px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+
+.es-eyebrow span {
+  margin-right: 16px;
+  color: var(--red);
+}
+
+.es-eyebrow:hover {
+  color: var(--red);
+}
+
+.es-title {
+  margin: 0 0 20px;
+  padding: 0;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(48px, 6.4vw, 104px);
+  font-weight: 500;
+  line-height: 1.02;
+  letter-spacing: -0.02em;
+  text-decoration: none;
+  color: var(--red);
+}
+
+.es-question {
+  max-width: 30em;
+  margin: 0 0 24px;
+  padding-left: 22px;
+  border-left: 2px solid var(--red);
+  font-family: 'Playfair Display', Georgia, serif;
+  font-style: italic;
+  font-size: clamp(18px, 1.7vw, 26px);
+  line-height: 1.4;
+  color: var(--ink);
+}
+
+.es-meta {
+  margin: 0;
+  font-family: 'Courier Prime', 'Courier New', monospace;
+  font-size: 13px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.es-hero {
+  margin: 0;
+}
+
+.es-hero img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 4.4;
+  object-fit: cover;
+}
+
+/* ---------- Body ---------- */
+.es-body {
+  max-width: 680px;
+  margin: 0 auto;
+  padding-top: clamp(32px, 5vh, 48px);
+  border-top: 1px solid rgba(29, 26, 25, 0.25);
+}
+
+.es-body p {
+  margin: 0 0 1.4em;
+  font-family: 'Libre Caslon Text', Georgia, serif;
+  font-size: clamp(16px, 1.25vw, 18.5px);
+  line-height: 1.85;
+  color: var(--ink);
+  text-align: left;
+  hyphens: manual;
+}
+
+/* Red drop cap on the opening paragraph */
+.es-body p:first-child::first-letter {
+  float: left;
+  margin: 0.08em 0.12em 0 0;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 4.4em;
+  line-height: 0.8;
+  color: var(--red);
+}
+
+/* Small star break before the conclusion */
+.es-body p:last-child::before {
+  content: "\2726";
+  display: block;
+  margin: 0.6em 0 1.2em;
+  text-align: center;
+  font-size: 18px;
+  color: var(--red);
+}
+
+/* ---------- Footer nav ---------- */
+.es-foot {
+  max-width: 680px;
+  margin: clamp(32px, 5vh, 56px) auto 0;
+}
+
+.es-foot a {
+  display: inline-flex;
+  gap: 12px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid rgba(29, 26, 25, 0.8);
+  font-family: 'Courier Prime', 'Courier New', monospace;
+  font-size: 14px;
+  letter-spacing: 0.08em;
+  color: var(--ink);
+}
+
+.es-foot a:hover {
+  color: var(--red);
+  border-bottom-color: var(--red);
+}
+
+@media (max-width: 800px) {
+  .es-head { grid-template-columns: 1fr; }
+  .es-hero { order: -1; }
+  .es-hero img { aspect-ratio: 16 / 10; }
+}
+
+.es-title-long {
+  font-size: clamp(40px, 4.8vw, 78px);
+}
+
+/* Subtitle under the question */
+.es-kicker {
+  margin: -8px 0 22px 24px;
+  font-family: 'La Belle Aurore', cursive;
+  font-size: clamp(18px, 1.6vw, 24px);
+  color: var(--red);
+}
+
+/* Essays split into objects/sections */
+.es-object {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin: 2.2em 0 0.9em;
+  padding: 0;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(22px, 2vw, 30px);
+  font-weight: 500;
+  line-height: 1.2;
+  text-decoration: none;
+  color: var(--ink);
+}
+
+.es-object:first-child {
+  margin-top: 0;
+}
+
+.es-object span {
+  font-family: 'Courier Prime', 'Courier New', monospace;
+  font-size: 13px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--red);
+}
+
+.es-object + p + .es-object::before {
+  content: "";
+}
+
+/* In object essays, drop cap goes on the first paragraph and no closing star */
+.es-objects p:first-child::first-letter {
+  float: none;
+  font-size: inherit;
+  margin: 0;
+  color: inherit;
+  font-family: inherit;
+}
+
+.es-objects .es-object:first-child + p::first-letter {
+  float: left;
+  margin: 0.08em 0.12em 0 0;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 4.4em;
+  line-height: 0.8;
+  color: var(--red);
+}
+
+.es-objects p:last-child::before {
+  content: none;
+}
+
+.es-objects .es-object:not(:first-child) {
+  padding-top: 1.6em;
+  border-top: 1px solid rgba(29, 26, 25, 0.2);
+}
+
+/* ---------- Published-in tag + "Seen in Bravado" panel ---------- */
+.es-published {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 18px;
+  padding: 9px 16px;
+  background: #1a1414;
+  font-family: 'Courier Prime', 'Courier New', monospace;
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #f1ede7;
+}
+
+.es-published strong {
+  color: #e0404c;
+  letter-spacing: 0.2em;
+}
+
+.es-published span {
+  transition: transform 0.2s ease;
+}
+
+.es-published:hover span {
+  transform: translateX(4px);
+}
+
+.es-seen {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  align-items: center;
+  gap: clamp(20px, 3vw, 40px);
+  max-width: 680px;
+  margin: clamp(40px, 6vh, 64px) auto 0;
+  padding: clamp(20px, 2.5vw, 30px);
+  background: #1a1414;
+  color: #f1ede7;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
+}
+
+.es-seen img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  display: block;
+  transform: rotate(-3deg);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease;
+}
+
+.es-seen:hover img {
+  transform: rotate(-1deg) translateY(-4px);
+}
+
+.es-seen-eyebrow {
+  margin: 0 0 8px;
+  font-family: 'Courier Prime', 'Courier New', monospace;
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(241, 237, 231, 0.7);
+}
+
+.es-seen-title {
+  margin: 0 0 10px;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(28px, 3vw, 42px);
+  line-height: 1.05;
+  color: #e0404c;
+}
+
+.es-seen-sub {
+  margin: 0 0 16px;
+  font-family: 'Libre Caslon Text', Georgia, serif;
+  font-size: 15px;
+  line-height: 1.6;
+  color: rgba(241, 237, 231, 0.85);
+}
+
+.es-seen-cta {
+  display: inline-flex;
+  gap: 12px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #e0404c;
+  font-family: 'Courier Prime', 'Courier New', monospace;
+  font-size: 13px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 600px) {
+  .es-seen { grid-template-columns: 1fr; }
+  .es-seen img { width: 140px; }
+}

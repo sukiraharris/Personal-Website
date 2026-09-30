@@ -79,10 +79,11 @@ body {
 .folder-bottom {
   top: 350px;
   height: 500px;
-  background: #ffffff;
-  border: 1.5px solid #3D0812;
+  background-color: #f3efe9;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.35  0 0 0 0 0.3  0 0 0 0 0.25  0 0 0 0.08 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+  border: 1px solid rgba(255, 255, 255, 0.7);
   z-index: 4;
-  box-shadow: inset 0 8px 20px rgba(0,0,0,0.08);
+  box-shadow: inset 0 1px 0 #fff, inset 0 10px 24px rgba(0,0,0,0.06);
   pointer-events: none;
 }
 
@@ -110,37 +111,49 @@ body {
   display: none;
 }
 
-/* Tab text */
+/* Tabs */
+.folder::before {
+  display: none;
+}
+
 .tab {
   position: absolute;
-  top: -42px;
-  height: 42px;
-  width: 180px;
+  top: -44px;
+  height: 46px;
+  width: clamp(150px, 16%, 240px);
   display: flex;
   align-items: center;
-  padding: 0 16px;
-  font-size: 22px;
-  font-weight: 600;
-  color: #F5EDE4;
+  justify-content: center;
+  padding: 0 16px 4px;
   box-sizing: border-box;
+  border-radius: 14px 14px 0 0;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-bottom: none;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(15px, 1.35vw, 21px);
+  font-weight: 600;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: #f5ede4;
 }
 
 .folder-back .tab {
-  left: auto;
-  right: 50px;
-  color: #ffffff;
-  font-size: 26px;
+  right: 5%;
+  background: linear-gradient(#e2dedb, #c9c4c0);
+  color: #2a2222;
 }
 
 .folder-mid .tab {
-  left: auto;
-  right: 800px;
-  font-size: 26px;
+  left: 5%;
+  background: linear-gradient(#2a2424, #0d0b0b);
 }
 
 .folder-front .tab {
-  left: auto;
-  right: 500px;
+  left: 50%;
+  transform: translateX(-50%);
+  top: -34px;
+  width: clamp(180px, 26%, 340px);
+  background: linear-gradient(#8e2233, #5c0f1c);
 }
 
 .folder-bottom .tab {
@@ -156,25 +169,56 @@ body {
   text-align: center;
   width: 80%;
   position: absolute;
-  bottom: 70px;
+  bottom: 50px;
 }
 
 .title-wrap h1 {
-  font-family: 'Great Vibes', cursive;
-  font-size: 230px;
+  font-family: 'Pinyon Script', 'Great Vibes', cursive;
+  font-size: clamp(120px, 15vw, 300px);
   font-weight: 400;
-  color: #8B1A2A;
-  line-height: 1;
+  line-height: 1.15;
   margin: 0;
+  padding: 0 0.1em;
   text-decoration: none;
 }
 
+/* Satin maroon ink */
+.title-wrap .script {
+  background: linear-gradient(170deg, #4a0612 10%, #8b1a2a 45%, #b0344a 55%, #6d0f1f 80%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  padding: 0 0.15em;
+}
+
+.title-rule {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 78%;
+  margin: -0.45em auto 14px;
+}
+
+.title-rule::before,
+.title-rule::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: rgba(90, 20, 32, 0.45);
+}
+
+.title-rule svg {
+  width: 12px;
+  height: 12px;
+  fill: #6d0f1f;
+}
+
 .title-wrap h2 {
-  font-family: system-ui, sans-serif;
-  font-size: 32px;
-  font-weight: 400;
-  color: #1C0A0A;
-  letter-spacing: 0.3em;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(22px, 2.3vw, 36px);
+  font-weight: 500;
+  color: #1c1414;
+  letter-spacing: 0.32em;
   text-transform: uppercase;
   border-top: none;
   padding-top: 0;
@@ -182,124 +226,733 @@ body {
   display: block;
 }
 
-.folder-img {
-  position: absolute;
-  width: 300px;
-  height: 300px;
-  top: 1%;
-  left: 5px;
-}
 
-.folder-mid:hover .folder-img {
-  transform: translateY(-50%) scale(1);
-  opacity: 1;
-}
-
-.folder-img {
-  transition: transform 0.4s ease, opacity 0.4s ease;
+/* Creative folder links to the Creative page */
+a.folder {
+  display: block;
+  text-decoration: none;
   cursor: pointer;
 }
 
-.folder-img:hover {
-  transform: translateY(-50%) scale(1.15);
+/* ---------- Creative folder: revealed editorial panel ---------- */
+/* This panel is taller than the others, so the Creative folder rises further */
+.folder-front:hover {
+  transform: translateX(-50%) translateY(-236px);
 }
 
-.folder-code-text {
+.cr-inner {
   position: absolute;
-  top: 30%;
-  left: 260px;
-  transform: translateY(-50%);
-  font-family: 'Courier New', monospace;
-  font-size: 35px;
-  font-weight: 5px;;
-  color: #b1afaf;
+  top: 12px;
+  left: 12px;
+  right: 12px;
+  height: 236px;
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: #efe8df;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.35  0 0 0 0 0.3  0 0 0 0 0.25  0 0 0 0.1 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.5);
   opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.folder-front:hover .cr-inner {
+  opacity: 1;
+}
+
+/* Small list, top left */
+.cr-list {
+  position: absolute;
+  top: 9%;
+  left: 2.2%;
+  margin: 0;
+  padding-bottom: 10px;
+  font-family: 'Jost', system-ui, sans-serif;
+  font-size: clamp(7px, 0.55vw, 9px);
+  line-height: 1.75;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #2a2422;
+}
+
+.cr-list::after {
+  content: "";
+  display: block;
+  width: 16px;
+  height: 1px;
+  margin-top: 10px;
+  background: #2a2422;
+}
+
+/* Photo: pinned right, left edge melts into matching red */
+.cr-photo {
+  position: absolute;
+  top: 5%;
+  bottom: 3%;
+  left: 39.5%;
+  right: 3.2%;
+  overflow: hidden;
+  background: #5c1e22;
+}
+
+.cr-photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 55%;
+}
+
+/* Big title: maroon over paper, cream where it crosses the photo */
+.cr-big {
+  position: absolute;
+  top: -3%;
+  left: 0;
+  right: 0;
+  margin: 0;
+  padding-left: 10%;
+  font-family: 'Bodoni Moda', 'Playfair Display', Georgia, serif;
+  font-size: clamp(42px, 5.2vw, 78px);
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: -0.035em;
+  text-transform: uppercase;
+  transform: scaleY(1.35);
+  transform-origin: left top;
+  color: #6e0f1b;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.cr-big-over {
+  color: #f1e9de;
+  clip-path: inset(0 0 0 39.5%);
+  z-index: 3;
+}
+
+/* Text block under the title */
+.cr-text {
+  position: absolute;
+  top: 41%;
+  left: 11%;
+  width: 28%;
+  z-index: 3;
+}
+
+.cr-script {
+  margin: 0 0 2px;
+  font-family: 'Bodoni Moda', 'Playfair Display', Georgia, serif;
+  font-style: italic;
+  font-size: clamp(15px, 1.9vw, 28px);
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: #1d1a19;
   white-space: nowrap;
 }
 
-.folder-mid:hover .folder-code-text {
-  opacity: 1;
+.cr-sub {
+  margin: 0 0 6px;
+  font-family: 'Bodoni Moda', 'Playfair Display', Georgia, serif;
+  font-size: clamp(8px, 0.78vw, 12px);
+  line-height: 1.15;
+  color: #1d1a19;
 }
 
-.dots span {
-  opacity: 0;
-}
-
-.dots .d1 { animation: none; }
-.dots .d2 { animation: none; }
-.dots .d3 { animation: none; }
-
-.folder-mid:hover .dots .d1 {
-  animation: fadein 0.3s ease 0.1s forwards;
-}
-.folder-mid:hover .dots .d2 {
-  animation: fadein 0.3s ease 0.5s forwards;
-}
-.folder-mid:hover .dots .d3 {
-  animation: fadein 0.3s ease 0.9s forwards;
-}
-
-.code-msg {
-  opacity: 0;
-  overflow: hidden;
-  display: inline-block;
-  width: 0;
-}
-
-.folder-mid:hover .code-msg {
-  animation: unroll 1.8s ease 1.7s forwards;
-}
-
-@keyframes fadein {
-  to { opacity: 1; }
-}
-
-@keyframes unroll {
-  to { opacity: 1; width: 700px; }
-}
-
-.creative-img {
-  position: absolute;
-  top: 10px;
-  left: 0;
-  width: 100%;
-  height: calc(100% - 110px);
-  object-fit: cover;
-  border-radius: 18px;
-  opacity: 0;
-  transition: opacity 0.4s ease;
-}
-
-.folder-front:hover .creative-img {
-  opacity: 1;
-}
-
-.creative-text {
-  position: absolute;
-  bottom: 90px;
-  left: 40px;
-  z-index: 2;
-  opacity: 0;
-  transition: opacity 0.4s ease;
-}
-
-.folder-front:hover .creative-text {
-  opacity: 1;
-}
-
-.creative-welcome {
-  font-family: 'Courier New', monospace;
-  font-size: 13px;
-  letter-spacing: 0.3em;
+.cr-projects {
+  list-style: none;
+  margin: 0 0 6px;
+  padding: 0 0 6px;
+  border-bottom: 1px solid #7a121e;
+  font-family: 'Jost', system-ui, sans-serif;
+  font-size: clamp(7px, 0.6vw, 9.5px);
+  line-height: 1.55;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: #ffffff;
-  margin: 0 0 4px 0;
+  color: #2a2422;
 }
 
-.creative-world {
-  font-family: 'Great Vibes', cursive;
-  font-size: 60px;
-  color: #ffffff;
+.cr-projects span {
+  display: inline-block;
+  width: 3.4em;
+  color: #9a1c22;
+}
+
+.cr-cta {
+  font-family: 'Jost', system-ui, sans-serif;
+  font-size: clamp(7px, 0.7vw, 10.5px);
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: #1d1a19;
+}
+
+.cr-cta span {
+  margin-left: 6px;
+  color: #9a1c22;
+}
+
+/* Right edge: rule, vertical label, red square */
+.cr-edge {
+  position: absolute;
+  top: 6%;
+  bottom: 6%;
+  right: 0.6%;
+  width: 2.2%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.cr-edge-line {
+  width: 1px;
+  height: 18%;
+  background: #7a121e;
+}
+
+.cr-edge-text {
+  flex: 1;
+  writing-mode: vertical-rl;
+  font-family: 'Jost', system-ui, sans-serif;
+  font-size: clamp(6px, 0.5vw, 9px);
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #2a2422;
+  white-space: nowrap;
+}
+
+.cr-edge-square {
+  width: 7px;
+  height: 7px;
+  background: #9a1c22;
+}
+
+/* ---------- Coding folder: revealed collage ---------- */
+.cd-inner {
+  position: absolute;
+  top: 12px;
+  left: 14px;
+  right: 14px;
+  height: 188px;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #0e0c0c;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+  color: #eee6da;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.folder-mid:hover .cd-inner {
+  opacity: 1;
+}
+
+.cd-bg {
+  position: absolute;
+  inset: 0 0 0 21%;
+}
+
+.cd-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 42%;
+  display: block;
+  filter: grayscale(1) brightness(0.32) contrast(1.2);
+}
+
+.cd-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, #0e0c0c 0%, rgba(14, 12, 12, 0.4) 30%, transparent 60%, rgba(14, 12, 12, 0.7) 100%);
+}
+
+.cd-film {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 9%;
+  padding: 8px 12px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  background:
+    repeating-linear-gradient(to bottom, transparent 0 5px, #3a3533 5px 9px, transparent 9px 14px) left 3px top / 4px 100% no-repeat,
+    repeating-linear-gradient(to bottom, transparent 0 5px, #3a3533 5px 9px, transparent 9px 14px) right 3px top / 4px 100% no-repeat,
+    #060505;
+  border-right: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.cd-film img {
+  flex: 1;
+  min-height: 0;
+  width: 100%;
+  object-fit: cover;
+  display: block;
+  filter: grayscale(1) contrast(1.1) brightness(0.85);
+}
+
+.cd-col {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 9%;
+  width: 12%;
+  border-right: 1px solid rgba(255, 255, 255, 0.12);
+  background: #0e0c0c;
+}
+
+.cd-hand {
+  margin: 14px 0 0 16%;
+  font-family: 'La Belle Aurore', cursive;
+  font-size: clamp(11px, 1.1vw, 17px);
+  line-height: 1.3;
+  color: #8b1a2a;
+  transform: rotate(-18deg);
+  transform-origin: top left;
+}
+
+.cd-list {
+  position: absolute;
+  left: 16%;
+  bottom: 10px;
   margin: 0;
-  line-height: 1;
+  font-family: 'Courier Prime', 'Courier New', monospace;
+  font-size: clamp(8px, 0.7vw, 11px);
+  line-height: 1.5;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #d9d0c4;
+}
+
+.cd-text {
+  position: absolute;
+  top: 26%;
+  left: 24%;
+  z-index: 3;
+}
+
+.cd-welcome {
+  margin: 0;
+  font-family: 'Courier Prime', 'Courier New', monospace;
+  font-size: clamp(10px, 0.95vw, 15px);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #eee6da;
+}
+
+.cd-world {
+  margin: 0;
+  font-family: 'Libre Caslon Text', Georgia, serif;
+  font-size: clamp(24px, 2.7vw, 46px);
+  line-height: 1.2;
+  color: #f3ebe0;
+  white-space: nowrap;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.6);
+}
+
+.cd-world em {
+  font-style: italic;
+}
+
+.cd-cursor {
+  margin-left: 0.08em;
+  font-style: normal;
+  font-weight: 300;
+  animation: cd-blink 1s steps(1) infinite;
+}
+
+@keyframes cd-blink {
+  50% { opacity: 0; }
+}
+
+.cd-rule {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  width: 62%;
+  margin-left: -22px;
+}
+
+.cd-rule svg {
+  order: -1;
+  width: 16px;
+  height: 16px;
+  fill: #e9c9cc;
+  filter: drop-shadow(0 0 4px rgba(233, 150, 160, 0.8));
+}
+
+.cd-rule::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: rgba(238, 230, 218, 0.4);
+}
+
+.cd-laptop {
+  position: absolute;
+  top: 7%;
+  left: 58%;
+  width: 23%;
+  height: 90%;
+  transform: rotate(3deg);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+  z-index: 2;
+}
+
+.cd-laptop img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 40% 35%;
+  display: block;
+  filter: grayscale(1) contrast(1.15) brightness(0.8);
+}
+
+.cd-tape {
+  position: absolute;
+  top: -10px;
+  left: -8px;
+  width: 42px;
+  height: 18px;
+  background: rgba(150, 140, 130, 0.6);
+  transform: rotate(-30deg);
+  z-index: 1;
+}
+
+.cd-right {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 18%;
+  border-left: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(14, 12, 12, 0.75);
+  z-index: 3;
+}
+
+.cd-snippet {
+  margin: 10px 0 0 8%;
+  font-family: 'Courier Prime', 'Courier New', monospace;
+  font-size: clamp(7px, 0.58vw, 10px);
+  line-height: 1.45;
+  color: #d9d0c4;
+}
+
+.cd-globe {
+  position: absolute;
+  top: 18%;
+  right: -12%;
+  width: 45%;
+  fill: none;
+  stroke: rgba(238, 230, 218, 0.45);
+  stroke-width: 0.8;
+}
+
+.cd-areas {
+  position: absolute;
+  left: 8%;
+  bottom: 10px;
+  margin: 0;
+  font-family: 'Courier Prime', 'Courier New', monospace;
+  font-size: clamp(7px, 0.66vw, 10px);
+  line-height: 1.55;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #eee6da;
+  white-space: nowrap;
+}
+
+.cd-scribble {
+  position: absolute;
+  right: 0;
+  bottom: -4%;
+  width: 26%;
+  height: 40%;
+  fill: none;
+  stroke: #8b1a2a;
+  stroke-width: 1.3;
+  stroke-linecap: round;
+  vector-effect: non-scaling-stroke;
+  z-index: 4;
+}
+
+/* Tuck the Creative tab away while the Coding folder is open */
+.folder-front .tab {
+  transition: opacity 0.3s ease;
+}
+
+.folder-mid:hover ~ .folder-front .tab {
+  opacity: 0;
+}
+
+/* ---------- Side collage around the folders ---------- */
+.portfolio-cover::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(55, 38, 30, 0.2);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.pc-collage {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.pc-collage img {
+  display: block;
+  object-fit: cover;
+  filter: grayscale(1) sepia(0.3) contrast(0.95);
+}
+
+/* Left: slim film strip */
+.pc-film {
+  position: absolute;
+  top: 190px;
+  left: 1vw;
+  width: 7vw;
+  min-width: 90px;
+  height: 440px;
+  padding: 10px 15px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  background:
+    repeating-linear-gradient(to bottom, transparent 0 6px, #e8e1d7 6px 11px, transparent 11px 17px) left 4px top / 5px 100% no-repeat,
+    repeating-linear-gradient(to bottom, transparent 0 6px, #e8e1d7 6px 11px, transparent 11px 17px) right 4px top / 5px 100% no-repeat,
+    #111;
+  transform: rotate(-5deg);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.pc-film img {
+  flex: 1;
+  min-height: 0;
+  width: 100%;
+  filter: grayscale(1) sepia(0.2) brightness(0.9);
+}
+
+/* Right: one small taped photo */
+.pc-photo {
+  position: absolute;
+  top: 190px;
+  right: 1.5vw;
+  width: 10vw;
+  min-width: 120px;
+  height: 180px;
+  margin: 0;
+  padding: 6px 6px 18px;
+  box-sizing: border-box;
+  background: #efe9e1;
+  transform: rotate(5deg);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.35);
+}
+
+.pc-photo img {
+  width: 100%;
+  height: 100%;
+  object-position: 50% 30%;
+}
+
+.pc-tape {
+  position: absolute;
+  top: -12px;
+  left: 30%;
+  width: 45%;
+  height: 22px;
+  background: rgba(225, 218, 208, 0.8);
+  transform: rotate(-6deg);
+}
+
+/* Thin red threads */
+.pc-thread {
+  position: absolute;
+  width: 22vw;
+  height: 400px;
+  fill: none;
+  stroke: rgba(150, 30, 45, 0.45);
+  stroke-width: 1;
+  vector-effect: non-scaling-stroke;
+}
+
+.pc-thread-left {
+  top: 300px;
+  left: 0;
+}
+
+.pc-thread-right {
+  top: 140px;
+  right: 0;
+}
+
+/* Not enough room beside the folders on narrow screens */
+@media (max-width: 1000px) {
+  .pc-collage { display: none; }
+}
+
+/* ---------- Writing folder: revealed collage ---------- */
+.wr-inner {
+  position: absolute;
+  top: 12px;
+  left: 14px;
+  right: 14px;
+  height: 196px;
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: #ece4da;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.35  0 0 0 0 0.3  0 0 0 0 0.25  0 0 0 0.1 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.5);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.folder-back:hover .wr-inner {
+  opacity: 1;
+}
+
+.wr-inner img {
+  display: block;
+  object-fit: cover;
+}
+
+.wr-photo {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 30%;
+  -webkit-mask-image: linear-gradient(to right, #000 80%, transparent 100%);
+  mask-image: linear-gradient(to right, #000 80%, transparent 100%);
+}
+
+.wr-photo img {
+  width: 100%;
+  height: 100%;
+  object-position: 50% 40%;
+  filter: grayscale(1) sepia(0.3) contrast(0.95);
+}
+
+.wr-scrap {
+  position: absolute;
+  background: #6d1422;
+  clip-path: polygon(6% 0, 100% 8%, 92% 55%, 100% 100%, 10% 94%, 0 40%);
+  opacity: 0.9;
+}
+
+.wr-scrap-left {
+  top: -6px;
+  left: 8%;
+  width: 5%;
+  height: 26%;
+}
+
+.wr-faint {
+  position: absolute;
+  top: 4%;
+  right: 12%;
+  width: 34%;
+  margin: 0;
+  font-family: 'La Belle Aurore', cursive;
+  font-size: 12px;
+  line-height: 1.6;
+  color: #3a2c28;
+  opacity: 0.13;
+  transform: rotate(-2deg);
+}
+
+.wr-text {
+  position: absolute;
+  top: 17%;
+  left: 30%;
+  right: 13%;
+  text-align: center;
+  z-index: 2;
+}
+
+.wr-welcome {
+  margin: 0;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-weight: 600;
+  font-size: clamp(11px, 1.05vw, 17px);
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: #3a3030;
+}
+
+.wr-world {
+  margin: 0;
+  padding: 0 0.2em;
+  font-family: 'Great Vibes', cursive;
+  font-size: clamp(32px, 3.7vw, 68px);
+  line-height: 1.15;
+  white-space: nowrap;
+  background: linear-gradient(175deg, #4a0612 15%, #8b1a2a 50%, #6d0f1f 85%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.wr-rule {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.wr-rule::before,
+.wr-rule::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: rgba(90, 20, 32, 0.45);
+}
+
+.wr-rule svg {
+  width: 12px;
+  height: 12px;
+  fill: #6d0f1f;
+}
+
+.wr-film {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 11%;
+  padding: 10px 14px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background:
+    repeating-linear-gradient(to bottom, transparent 0 5px, #b8413f 5px 10px, transparent 10px 15px) left 4px top / 4px 100% no-repeat,
+    repeating-linear-gradient(to bottom, transparent 0 5px, #e8e0d4 5px 10px, transparent 10px 15px) right 4px top / 4px 100% no-repeat,
+    #141111;
+  z-index: 2;
+}
+
+.wr-film img {
+  flex: 1;
+  min-height: 0;
+  width: 100%;
+  filter: grayscale(1) sepia(0.2) brightness(0.9);
+}
+
+/* Only a folder's own tab opens it. Without this, reaching for the Coding or
+   Writing tab brushes the Creative folder (it sits on top, behind the
+   click-through Portfolio card), which slides up and steals the click. */
+.folder {
+  pointer-events: none;
+}
+
+.folder .tab,
+.folder:hover {
+  pointer-events: auto;
 }

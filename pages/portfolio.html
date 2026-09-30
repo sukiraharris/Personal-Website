@@ -6,18 +6,16 @@
         <title>Explore My Mind</title>
         <link rel="stylesheet" href="../style.css">
         <link rel="stylesheet" href="../portfolio.css">
-        <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Bodoni+Moda:ital,opsz,wght@0,6..96,500;1,6..96,500&family=La+Belle+Aurore&family=Pinyon+Script&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Courier+Prime&family=Libre+Caslon+Text:ital@0;1&display=swap" rel="stylesheet">
     </head>
     <body>
         <header class="top-bar">
             <div class="nav">
-                <a href="../index.html" class="logo">
-                <img src="../images/inverted.png" alt="Sukira logo">
+                <a href="about.html" class="logo">
+                <img src="../Images/inverted.png" alt="Sukira logo">
                 </a>
                 <nav class="links">
-                    <a href="about.html">About</a>
                     <a href="portfolio.html" class="active">Portfolio</a>
-                    <a href="my-brain.html">My Brain</a>
                     <a href="contact.html">Contact</a>
                 </nav>
             </div>
@@ -25,36 +23,130 @@
 
         <main class="portfolio-cover">
 
-            <div class="folder folder-back">
+            <!-- Side collage -->
+            <div class="pc-collage" aria-hidden="true">
+                <div class="pc-film">
+                    <img src="../Images/mariaSpread-web.jpg" alt="" style="object-position: 62% 30%;" />
+                    <img src="../Images/creative-web.jpg" alt="" style="object-position: 50% 40%;" />
+                    <img src="../Images/mariaSpread-web.jpg" alt="" style="object-position: 25% 55%;" />
+                </div>
+                <figure class="pc-photo">
+                    <span class="pc-tape"></span>
+                    <img src="../Images/creative-web.jpg" alt="" />
+                </figure>
+                <svg class="pc-thread pc-thread-left" viewBox="0 0 300 400" preserveAspectRatio="none">
+                    <path d="M0 120 C80 140 160 200 300 190"/>
+                    <path d="M40 400 C90 300 180 260 300 250"/>
+                </svg>
+                <svg class="pc-thread pc-thread-right" viewBox="0 0 300 400" preserveAspectRatio="none">
+                    <path d="M300 40 C240 60 150 30 60 90 C20 115 60 160 110 150"/>
+                    <path d="M300 300 C220 290 150 330 0 320"/>
+                </svg>
+            </div>
+
+            <a href="writing.html" class="folder folder-back">
                 <div class="tab">Writing</div>
-            </div>
 
-            <div class="folder folder-mid">
+                <!-- Revealed when the folder slides up -->
+                <div class="wr-inner" aria-hidden="true">
+                    <div class="wr-photo"><img src="../Images/writing.jpeg" alt="" /></div>
+                    <div class="wr-scrap wr-scrap-left"></div>
+                    <p class="wr-faint">ideas people places progress read write rewrite notes drafts pages margins ideas people places progress read write rewrite notes drafts pages margins ideas people places progress read write rewrite notes drafts pages margins</p>
+                    <div class="wr-text">
+                        <p class="wr-welcome">Welcome to</p>
+                        <p class="wr-world">my Writing World</p>
+                        <div class="wr-rule">
+                            <svg viewBox="0 0 20 20"><path d="M10 0 C10.6 7 13 9.4 20 10 C13 10.6 10.6 13 10 20 C9.4 13 7 10.6 0 10 C7 9.4 9.4 7 10 0 Z"/></svg>
+                        </div>
+                    </div>
+                    <div class="wr-film">
+                        <img src="../Images/writing.jpeg" alt="" style="object-position: 50% 25%;" />
+                        <img src="../Images/writing.jpeg" alt="" style="object-position: 70% 88%;" />
+                    </div>
+                </div>
+            </a>
+
+            <a href="coding.html" class="folder folder-mid">
                 <div class="tab pink-text">Coding</div>
-                <img src="../images/laptop.png" class="folder-img" alt="coding" />
-                <div class="folder-code-text">
-                    <span class="code-msg"> Welcome to my personal projects</span>
-                    <span class="dots">
-                        <span class="d1">.</span>
-                        <span class="d2">.</span>
-                        <span class="d3">.</span>
-                    </span>
+                <!-- Revealed when the folder slides up -->
+                <div class="cd-inner" aria-hidden="true">
+                    <div class="cd-bg"><img src="../Images/computer-web.jpg" alt="" /></div>
+                    <div class="cd-film">
+                        <img src="../Images/computer-web.jpg" alt="" style="object-position: 45% 85%;" />
+                        <img src="../Images/computer-web.jpg" alt="" style="object-position: 70% 45%;" />
+                        <img src="../Images/computer-web.jpg" alt="" style="object-position: 30% 20%;" />
+                    </div>
+                    <div class="cd-col">
+                        <p class="cd-hand">build<br>learn<br>iterate<br>&hellip;</p>
+                        <p class="cd-list">Ideas<br>Code<br>Systems<br>People<br>Impact &mdash;</p>
+                    </div>
+                    <div class="cd-text">
+                        <p class="cd-welcome">&gt;&gt; Welcome to</p>
+                        <p class="cd-world">my <em>Coding World</em><span class="cd-cursor">|</span></p>
+                        <div class="cd-rule">
+                            <svg viewBox="0 0 20 20"><path d="M10 0 C10.6 7 13 9.4 20 10 C13 10.6 10.6 13 10 20 C9.4 13 7 10.6 0 10 C7 9.4 9.4 7 10 0 Z"/></svg>
+                        </div>
+                    </div>
+                    <div class="cd-laptop">
+                        <span class="cd-tape"></span>
+                        <img src="../Images/coding-laptop.jpg" alt="" />
+                    </div>
+                    <div class="cd-right">
+                        <pre class="cd-snippet">for i in range(len(ideas)):
+    build()
+    explore()
+    repeat()</pre>
+                        <svg class="cd-globe" viewBox="0 0 100 100">
+                            <circle cx="50" cy="50" r="46"/>
+                            <ellipse cx="50" cy="50" rx="18" ry="46"/>
+                            <ellipse cx="50" cy="50" rx="34" ry="46"/>
+                            <ellipse cx="50" cy="50" rx="46" ry="16"/>
+                            <ellipse cx="50" cy="50" rx="46" ry="32"/>
+                            <line x1="4" y1="50" x2="96" y2="50"/>
+                            <line x1="50" y1="4" x2="50" y2="96"/>
+                        </svg>
+                        <p class="cd-areas">Research<br>AI/ML<br>Computer Vision<br>Human-Computer<br>&nbsp;Interaction<br>Neurotech<br>And more &hellip;</p>
+                    </div>
+                    <svg class="cd-scribble" viewBox="0 0 300 100" preserveAspectRatio="none">
+                        <path d="M2 98 C70 70 150 40 200 30 C222 26 185 78 204 82 C228 86 255 45 272 38 C284 33 288 48 298 34"/>
+                    </svg>
                 </div>
+            </a>
             </div>
 
-            <div class="folder folder-front">
+            <a href="creative.html" class="folder folder-front">
                 <div class="tab right">Creative</div>
-                <img src="../images/mariaSpread.JPG" class="creative-img" alt="creative" />
-                <div class="creative-text">
-                    <p class="creative-welcome">welcome to</p>
-                    <p class="creative-world">my Creative World</p>
+                <!-- Revealed when the folder slides up -->
+                <div class="cr-inner" aria-hidden="true">
+                    <p class="cr-list">Fashion<br>Direction<br>People<br>Places<br>Ideas</p>
+                    <div class="cr-photo"><img src="../Images/creative-tightrope.jpg" alt="" /></div>
+                    <p class="cr-big">Creative</p>
+                    <p class="cr-big cr-big-over">Creative</p>
+                    <div class="cr-text">
+                        <p class="cr-script">direction &amp; fashion</p>
+                        <p class="cr-sub">Creative direction, fashion, styling<br>and visual storytelling.</p>
+                        <ol class="cr-projects">
+                            <li><span>01</span>Bravado</li>
+                            <li><span>02</span>Odyssey</li>
+                            <li><span>03</span>ACS Fashion Show</li>
+                        </ol>
+                        <span class="cr-cta">View selected work <span>&rarr;</span></span>
+                    </div>
+                    <div class="cr-edge">
+                        <span class="cr-edge-line"></span>
+                        <span class="cr-edge-text">Bravado / Odyssey / ACS Show</span>
+                        <span class="cr-edge-square"></span>
+                    </div>
                 </div>
-            </div>
+            </a>
 
             <div class="folder folder-bottom">
 
                 <div class="title-wrap">
                     <h1><span class="script">Portfolio</span></h1>
+                    <div class="title-rule" aria-hidden="true">
+                        <svg viewBox="0 0 20 20"><path d="M10 0 C10.6 7 13 9.4 20 10 C13 10.6 10.6 13 10 20 C9.4 13 7 10.6 0 10 C7 9.4 9.4 7 10 0 Z"/></svg>
+                    </div>
                     <h2><span class="bold">Sukira Harris</span></h2>
                 </div>
             </div>

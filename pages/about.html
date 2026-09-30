@@ -6,19 +6,17 @@
         <title>Meet Me — Sukira Harris</title>
         <link rel="stylesheet" href="../style.css">
         <link rel="stylesheet" href="../about.css">
-        <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@1&family=Cormorant+Garamond:ital,wght@1,300&family=IM+Fell+English:ital@1&family=Libre+Baskerville:ital@1&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&family=Libre+Caslon+Text:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
     </head>
     <body>
         <header class="top-bar">
             <div class="nav">
-                <a href="../index.html" class="logo">
-                  <img src="../images/inverted.png" alt="Sukira logo">
+                <a href="about.html" class="logo">
+                  <img src="../Images/inverted.png" alt="Sukira logo">
                 </a>
                 <nav class="links">
-                    <a href="about.html" class="active">About</a>
                     <a href="portfolio.html">Portfolio</a>
-                    <a href="my-brain.html">My Brain</a>
                     <a href="contact.html">Contact</a>
                 </nav>
             </div>
@@ -27,21 +25,38 @@
         <main class="about-main">
             <div class="about-grid">
 
-                <!-- Left: text with wrap photo floating inside -->
+                <!-- Text column -->
                 <div class="about-text">
+                    <p class="eyebrow">About me</p>
                     <h1 class="about-title">Meet Me</h1>
 
-                    <p class="first-p">I'm a second-year Computer Science student at Northeastern University with a minor in Behavioural Neuroscience. I'm passionate about the intersection of technology and health, and I'm motivated by building solutions that are both innovative and human-centered.</p>
+                    <p class="about-p">I’m a third-year Computer Science student at Northeastern University, concentrating in Artificial Intelligence and minoring in Neuroscience. I’m fascinated by the intersection of computation, biology, and human behavior, and by how technology can be used to better understand—and interact with—living systems.</p>
 
-                    <p class="first-p">I've always loved creating, whether through fashion, which has been a core form of self-expression for me, or through reading and writing, which I turn to constantly for inspiration and reflection.</p>
+                    <p class="about-p">My work has taken me from studying animal behavior and computer vision in Harvard’s Engert Lab to exploring animal-computer interaction and building software across research and academic projects. I’m especially drawn to problems in neurotechnology, computational neuroscience, health technology, and human-centered AI, where technical work has a tangible connection to the way people live and experience the world.</p>
 
-                    <p class="first-p">Movement and sport have shaped who I am just as much as academics. From rugby and endurance sports like running and cycling to dance, hiking, and calisthenics, I've grown up valuing challenge, discipline, and physical expression. I try to carry that same mindset into everything I do: pushing myself, staying curious, and giving 100%.</p>
+                    <p class="about-p">Outside of computer science, I’ve always been a creator. Fashion has been one of my main forms of self-expression, and as Creative Director of Avenue, I get to combine creative direction, visual storytelling, and leadership. Reading and writing are equally important to me, giving me a completely different way to explore ideas and experiences.</p>
+
+                    <p class="about-p">Movement and sport have shaped me just as much. From marathon running and cycling to rugby, dance, hiking, and calisthenics, I’m happiest when I’m challenging myself physically. That curiosity carries across everything I do: I like learning things deeply, moving between disciplines, and taking on projects that push me somewhere I haven’t been before.</p>
                 </div>
 
-                <!-- Right: full height headshot -->
-                <div class="headshot-col">
-                    <img src="../images/headshot.png" alt="Sukira Harris" class="headshot-image" />
-                    <div class="vertical-name">Sukira    Harris</div>
+                <!-- Thin divider with star ornament -->
+                <div class="divider" aria-hidden="true">
+                    <svg class="divider-star" viewBox="0 0 20 40"><path d="M10 0 C11 14 12 18 20 20 C12 22 11 26 10 40 C9 26 8 22 0 20 C8 18 9 14 10 0 Z"/></svg>
+                </div>
+
+                <!-- Vertical name -->
+                <div class="vertical-name">Sukira Harris</div>
+
+                <!-- Photo + collage -->
+                <div class="photo-col">
+                    <img src="../Images/writing.jpeg" alt="" class="collage collage-top" />
+                    <div class="collage-paper" aria-hidden="true"></div>
+                    <img src="../Images/computer.jpeg" alt="" class="collage collage-bottom" />
+                    <img src="../Images/Headshot.PNG" alt="Sukira Harris" class="headshot-image" />
+                    <div class="film-strip" aria-hidden="true"><span>PAPER 5005 &#9656; 43 &#9656; 44</span></div>
+                    <svg class="scribble" viewBox="0 0 400 120" preserveAspectRatio="none" aria-hidden="true">
+                        <path d="M5 110 C60 80 150 20 190 30 C215 38 150 105 175 112 C200 118 250 60 275 70 C300 80 285 105 320 95 C350 86 380 70 398 66"/>
+                    </svg>
                 </div>
 
             </div>

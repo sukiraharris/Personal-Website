@@ -1,0 +1,355 @@
+/* Creative page: magazine-style "Selected Creative Work" */
+:root {
+  --paper: #f0e9df;
+  --ink: #1d1a19;
+  --muted: #3f3836;
+  --maroon: #6e0f1b;
+  --red: #9a1c22;
+  --rule: rgba(29, 26, 25, 0.25);
+}
+
+body {
+  background-color: var(--paper);
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.35  0 0 0 0 0.3  0 0 0 0 0.25  0 0 0 0.08 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+
+.cw-main {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 56px;
+  max-width: 1240px;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: clamp(28px, 5vh, 56px) clamp(20px, 3vw, 40px) clamp(48px, 8vh, 88px);
+}
+
+.cw-main a {
+  text-decoration: none;
+}
+
+.cw-page {
+  padding-right: clamp(20px, 3vw, 44px);
+  border-right: 1px solid var(--rule);
+}
+
+/* ---------- Header ---------- */
+.cw-head {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 32px;
+  align-items: start;
+}
+
+.cw-title-wrap {
+  position: relative;
+}
+
+.cw-num {
+  margin: 0 0 6px;
+  font-family: 'Jost', system-ui, sans-serif;
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  color: var(--muted);
+}
+
+.cw-script {
+  position: absolute;
+  top: -0.08em;
+  left: 0.2em;
+  margin: 0;
+  font-family: 'Mrs Saint Delafield', cursive;
+  font-size: clamp(64px, 8vw, 120px);
+  line-height: 1;
+  color: var(--maroon);
+  transform: rotate(-12deg);
+  z-index: 2;
+  pointer-events: none;
+}
+
+.cw-title {
+  margin: clamp(26px, 3.4vw, 50px) 0 16px;
+  padding: 0;
+  font-family: 'Bodoni Moda', 'Playfair Display', Georgia, serif;
+  font-size: clamp(64px, 10vw, 150px);
+  font-weight: 500;
+  line-height: 0.82;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--maroon);
+}
+
+.cw-tags {
+  margin: 0;
+  font-family: 'Jost', system-ui, sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+
+.cw-tags span {
+  margin: 0 10px;
+}
+
+.cw-intro {
+  position: relative;
+  max-width: 13em;
+  margin: 0;
+  padding-left: 18px;
+  border-left: 1px solid var(--maroon);
+  font-family: 'Jost', system-ui, sans-serif;
+  font-size: 11px;
+  line-height: 1.7;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.cw-intro::after {
+  content: "";
+  position: absolute;
+  left: -4px;
+  bottom: -10px;
+  width: 7px;
+  height: 7px;
+  background: var(--maroon);
+}
+
+/* ---------- Items ---------- */
+.cw-item {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
+  align-items: center;
+  gap: clamp(28px, 4vw, 56px);
+  padding: clamp(28px, 4vh, 44px) 0;
+  border-bottom: 1px solid var(--rule);
+}
+
+.cw-odyssey {
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+}
+
+.cw-n {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin: 0 0 14px;
+  font-family: 'Libre Caslon Text', Georgia, serif;
+  font-size: 15px;
+  font-variant-numeric: lining-nums;
+  color: var(--red);
+}
+
+.cw-n::after {
+  content: "";
+  width: 90px;
+  height: 1px;
+  background: var(--rule);
+}
+
+.cw-name {
+  margin: 0 0 10px;
+  padding: 0;
+  font-family: 'Libre Caslon Text', Georgia, serif;
+  font-size: clamp(30px, 3.4vw, 50px);
+  font-weight: 400;
+  line-height: 1.02;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--ink);
+}
+
+.cw-role {
+  margin: 0 0 16px;
+  font-family: 'Jost', system-ui, sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+
+.cw-desc {
+  max-width: 30em;
+  margin: 0 0 20px;
+  font-family: 'Libre Caslon Text', Georgia, serif;
+  font-size: clamp(14px, 1.1vw, 16px);
+  line-height: 1.55;
+  color: var(--muted);
+}
+
+.cw-more {
+  display: inline-flex;
+  gap: 12px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid var(--ink);
+  font-family: 'Libre Caslon Text', Georgia, serif;
+  font-size: 14px;
+  color: var(--ink);
+}
+
+.cw-more span {
+  transition: transform 0.2s ease;
+}
+
+.cw-more:hover {
+  color: var(--red);
+  border-bottom-color: var(--red);
+}
+
+.cw-more:hover span {
+  transform: translateX(4px);
+}
+
+/* ---------- Visuals ---------- */
+.cw-visual {
+  position: relative;
+}
+
+.cw-img {
+  position: relative;
+  display: block;
+  z-index: 2;
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.22);
+  transition: transform 0.3s ease;
+}
+
+.cw-img img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cw-img:hover {
+  transform: translateY(-4px);
+}
+
+/* torn paper behind each photo */
+.cw-paper {
+  position: absolute;
+  z-index: 1;
+  background: #d6cec3;
+  clip-path: polygon(2% 4%, 20% 0, 48% 3%, 76% 0, 98% 3%, 100% 40%, 97% 72%, 100% 98%, 70% 100%, 40% 97%, 12% 100%, 0 70%, 3% 36%);
+  opacity: 0.85;
+}
+
+.cw-paper-red {
+  background: #7a1722;
+  opacity: 0.9;
+}
+
+/* Bravado */
+.cw-bravado {
+  border-bottom: 1px solid var(--rule);
+}
+
+.cw-cover {
+  width: min(88%, 380px);
+  aspect-ratio: 692 / 882;
+  margin-left: auto;
+  transform: rotate(3deg);
+}
+
+.cw-cover:hover {
+  transform: rotate(2deg) translateY(-4px);
+}
+
+.cw-bravado .cw-paper {
+  left: -6%;
+  top: 22%;
+  width: 34%;
+  height: 46%;
+}
+
+.cw-scribble {
+  position: absolute;
+  left: 12%;
+  right: -10%;
+  bottom: -10%;
+  height: 34%;
+  z-index: 3;
+  fill: none;
+  stroke: var(--red);
+  stroke-width: 1.3;
+  stroke-linecap: round;
+  vector-effect: non-scaling-stroke;
+  pointer-events: none;
+}
+
+/* Odyssey */
+.cw-odyssey .cw-img {
+  aspect-ratio: 16 / 10;
+}
+
+.cw-odyssey .cw-img img {
+  object-position: 50% 45%;
+}
+
+.cw-odyssey .cw-paper {
+  left: -3%;
+  top: 6%;
+  width: 24%;
+  height: 88%;
+}
+
+/* ACS */
+.cw-acs .cw-img {
+  aspect-ratio: 16 / 11;
+}
+
+.cw-acs .cw-paper {
+  right: -2%;
+  top: -5%;
+  width: 60%;
+  height: 20%;
+  left: auto;
+}
+
+/* ---------- Right rail ---------- */
+.cw-rail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 4px 0;
+}
+
+.cw-rail-text {
+  writing-mode: vertical-rl;
+  font-family: 'Jost', system-ui, sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.cw-rail-square {
+  width: 7px;
+  height: 7px;
+  margin-top: auto;
+  background: var(--maroon);
+}
+
+/* ---------- Small screens ---------- */
+@media (max-width: 800px) {
+  .cw-main { grid-template-columns: 1fr; }
+  .cw-page { padding-right: 0; border-right: none; }
+  .cw-rail, .cw-intro { display: none; }
+  .cw-head, .cw-item, .cw-odyssey { grid-template-columns: 1fr; }
+  .cw-odyssey .cw-text { order: -1; }
+  .cw-cover { margin: 0 auto; }
+}
