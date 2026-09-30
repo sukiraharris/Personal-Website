@@ -3,40 +3,14 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Explore My Mind</title>
-        <link rel="stylesheet" href="style.css">
+        <title>Sukira Harris</title>
+        <!-- The site opens on the About page -->
+        <meta http-equiv="refresh" content="0; url=pages/about.html">
+        <link rel="canonical" href="pages/about.html">
+        <script>location.replace('pages/about.html' + location.hash);</script>
+        <style>body { background: #f3efe9; }</style>
     </head>
     <body>
-        <header class="top-bar">
-            <div class="nav">
-                <a href="pages/about.html" class="logo">
-                  <img src="Images/inverted.png" alt="Sukira logo">
-                </a>
-                <nav class="links">
-                    <a href="pages/portfolio.html">Portfolio</a>
-                    <a href="pages/contact.html">Contact</a>
-                </nav>
-            </div>
-        </header>
-        <main class="home-main">
-            <div class="snake-container">
-                <svg class="snake-svg" viewBox="0 0 600 200">
-                <!-- your snake path -->
-                <path 
-                class="snake-path" 
-                d="/images/snake.svg" />
-                </svg>
-            </div>
-            <h1>Explore My Mind</h1>
-            <p class="welcome-text">
-        Welcome to my personal website where I share my thoughts, projects, and ideas.
-        Dive into my mind and explore the various facets of my interests and work.
-            </p>
-            
-        </main>  
-        <footer class="bottom-bar">
-            <p>&copy; 2024 Sukira Harris. All rights reserved.</p>
-        </footer>
-        <script src="main.js"></script>
+        <p><a href="pages/about.html">Continue to Sukira Harris</a></p>
     </body>
 </html>
