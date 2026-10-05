@@ -80,7 +80,7 @@ body {
 }
 
 /* Maroon drop cap */
-.about-title + .about-p::first-letter {
+.drop-cap {
   float: left;
   font-family: 'Playfair Display', Georgia, serif;
   font-size: 4.6em;
