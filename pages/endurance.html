@@ -29,6 +29,19 @@
                 <p class="pp-sub"><span>Running</span><span>Cycling</span><span>Long distance</span></p>
             </header>
 
+            <!-- Next challenge: countdown updates itself every day -->
+            <section class="en-next">
+                <div class="en-next-text">
+                    <p class="en-next-eyebrow">Next challenge &middot; Testing my limits</p>
+                    <h2 class="en-next-title">My first <em>half Ironman</em></h2>
+                    <p class="en-next-sub">I’ve just signed up for my first half Ironman: a 1.9 km swim, a 90 km bike and a 21.1 km run, back to back. It’s the biggest test of my abilities yet.</p>
+                </div>
+                <div class="en-count" aria-live="polite">
+                    <strong id="en-days">321</strong>
+                    <span id="en-days-label">days to go</span>
+                </div>
+            </section>
+
             <figure class="pp-hero en-hero">
                 <img src="../Images/fitness/boston-10k-women-2026/finish-line.jpg" alt="Crossing the finish line at the Boston 10K for Women in 2026" style="object-position: 60% 60%;" />
                 <figcaption>Boston 10K for Women &middot; 10 October 2026 &middot; 43:24</figcaption>
@@ -73,10 +86,16 @@
 
             <!-- Two marathons, one summer -->
             <section class="en-race en-race-flip">
-                <figure class="en-race-img">
-                    <img src="../Images/fitness/bayside-run-marathon/running-coastal-path.jpg" alt="Running along the coastal path during the Bayside Run Marathon in Sydney" />
-                    <figcaption>Bayside Run &middot; Sydney &middot; 3:51</figcaption>
-                </figure>
+                <div class="en-race-pair">
+                    <figure class="en-race-img">
+                        <img src="../Images/fitness/bayside-run-marathon/running-coastal-path.jpg" alt="Running along the coastal path during the Bayside Run Marathon in Sydney" />
+                        <figcaption>Bayside &middot; Sydney</figcaption>
+                    </figure>
+                    <figure class="en-race-img">
+                        <img src="../Images/fitness/thames-meander-marathon/post-race-recovery.jpg" alt="Being cooled down with a fan after the Thames Meander Marathon in London" />
+                        <figcaption>Thames &middot; London</figcaption>
+                    </figure>
+                </div>
 
                 <div class="en-race-text">
                     <p class="en-race-eyebrow">Two marathons &middot; Summer 2026</p>
@@ -114,5 +133,21 @@
             <p>&copy; 2024 Sukira Harris. All rights reserved.</p>
         </footer>
         <script src="../main.js"></script>
+        <script>
+            // Half Ironman race day. The countdown is worked out from this date
+            // each time the page loads, so it stays correct every day.
+            (function () {
+                var race = new Date(2027, 8, 13); // 13 September 2027 (months start at 0)
+                var today = new Date();
+                today.setHours(0, 0, 0, 0);
+                var days = Math.round((race - today) / 86400000);
+                var num = document.getElementById('en-days');
+                var label = document.getElementById('en-days-label');
+                if (days > 1) { num.textContent = days; label.textContent = 'days to go'; }
+                else if (days === 1) { num.textContent = 1; label.textContent = 'day to go'; }
+                else if (days === 0) { num.textContent = 'Today'; label.textContent = 'race day'; }
+                else { num.textContent = 'Done'; label.textContent = 'race complete'; }
+            })();
+        </script>
     </body>
 </html>

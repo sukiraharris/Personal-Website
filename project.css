@@ -523,3 +523,112 @@ a.pp-mag:hover {
   .en-race-flip { grid-template-columns: 1fr; }
   .en-race-flip .en-race-img { order: 0; }
 }
+
+/* ---------- Endurance: next challenge countdown ---------- */
+.en-next {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: clamp(24px, 4vw, 56px);
+  margin: 0 0 clamp(24px, 4vh, 36px);
+  padding: clamp(22px, 3vw, 36px) clamp(22px, 3.5vw, 44px);
+  background: #1a1414;
+  color: #f2ede7;
+}
+
+.en-next-eyebrow {
+  margin: 0 0 10px;
+  font-family: 'Jost', system-ui, sans-serif;
+  font-size: 12px;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: #e0a3ab;
+}
+
+.en-next-title {
+  margin: 0 0 12px;
+  padding: 0;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(30px, 3.6vw, 52px);
+  font-weight: 500;
+  line-height: 1.05;
+  text-decoration: none;
+  color: #f2ede7;
+}
+
+.en-next-title em {
+  font-style: italic;
+  color: #e0404c;
+}
+
+.en-next-sub {
+  max-width: 34em;
+  margin: 0;
+  font-family: 'Libre Caslon Text', Georgia, serif;
+  font-size: clamp(14px, 1.1vw, 16px);
+  line-height: 1.6;
+  color: rgba(242, 237, 231, 0.85);
+}
+
+.en-count {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 170px;
+  padding: 18px 26px;
+  border: 1px solid rgba(242, 237, 231, 0.3);
+}
+
+.en-count strong {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(54px, 6vw, 88px);
+  font-weight: 500;
+  line-height: 1;
+  font-variant-numeric: lining-nums;
+  color: #f2ede7;
+}
+
+.en-count span {
+  margin-top: 8px;
+  font-family: 'Jost', system-ui, sans-serif;
+  font-size: 12px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: rgba(242, 237, 231, 0.75);
+}
+
+/* Two photos side by side in a race section */
+.en-race-flip:has(.en-race-pair) {
+  grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr);
+}
+
+.en-race-pair {
+  order: 2;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: start;
+  gap: 12px;
+}
+
+.en-race-pair .en-race-img:nth-child(2) {
+  margin-top: 36px;
+}
+
+.en-race-pair .en-race-img:nth-child(2) img {
+  object-position: 45% 35%;
+}
+
+.en-race-pair figcaption {
+  left: 8px;
+  right: 8px;
+  bottom: 8px;
+  padding: 5px 8px;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+}
+
+@media (max-width: 800px) {
+  .en-next { grid-template-columns: 1fr; }
+  .en-count { justify-self: start; }
+  .en-race-pair { order: 0; }
+}
