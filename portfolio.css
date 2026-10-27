@@ -20,7 +20,7 @@ body {
 
 .portfolio-cover {
   position: relative;
-  min-height: 100vh;
+  min-height: 70vh;
   overflow: hidden;
   padding-top: 120px;
   background-image: url('Images/portfolio_bg.png');
@@ -53,7 +53,7 @@ body {
 
 /* Layers */
 .folder-back {
-  top: 270px;
+  top: 190px;
   height: 300px;
   background: #a09d9d;
   z-index: 1;
@@ -61,7 +61,7 @@ body {
 }
 
 .folder-mid {
-  top: 280px;
+  top: 200px;
   height: 400px;
   background: #000000;
   z-index: 2;
@@ -69,7 +69,7 @@ body {
 }
 
 .folder-front {
-  top: 290px;
+  top: 210px;
   height: 300px;
   background: #3D0812;
   z-index: 3;
@@ -77,8 +77,8 @@ body {
 }
 
 .folder-bottom {
-  top: 310px;
-  height: 450px;
+  top: 230px;
+  height: min(450px, calc(100vh - 80px - 230px - 28px));
   background-color: #f3efe9;
   background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.35  0 0 0 0 0.3  0 0 0 0 0.25  0 0 0 0.08 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
   border: 1px solid rgba(255, 255, 255, 0.7);
@@ -238,7 +238,7 @@ a.folder {
 /* ---------- Creative folder: revealed editorial panel ---------- */
 /* This panel is taller than the others, so the Creative folder rises further */
 .folder-front:hover {
-  transform: translateX(-50%) translateY(-236px);
+  transform: translateX(-50%) translateY(-218px);
 }
 
 .cr-inner {
@@ -246,7 +246,7 @@ a.folder {
   top: 12px;
   left: 12px;
   right: 12px;
-  height: 236px;
+  height: 214px;
   border-radius: 10px;
   overflow: hidden;
   background-color: #efe8df;
@@ -333,7 +333,7 @@ a.folder {
 /* Text block under the title */
 .cr-text {
   position: absolute;
-  top: 41%;
+  top: 38%;
   left: 11%;
   width: 28%;
   z-index: 3;
@@ -360,12 +360,12 @@ a.folder {
 
 .cr-projects {
   list-style: none;
-  margin: 0 0 6px;
-  padding: 0 0 6px;
+  margin: 0 0 5px;
+  padding: 0 0 5px;
   border-bottom: 1px solid #7a121e;
   font-family: 'Jost', system-ui, sans-serif;
   font-size: clamp(7px, 0.6vw, 9.5px);
-  line-height: 1.55;
+  line-height: 1.4;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: #2a2422;
@@ -958,15 +958,8 @@ a.folder {
   pointer-events: auto;
 }
 
-/* Shorter laptop screens: lift the folder stack so the whole card stays in view */
+/* Shorter screens: scale the title to the card */
 @media (max-height: 880px) {
-  .folder-back { top: 210px; }
-  .folder-mid { top: 220px; }
-  .folder-front { top: 230px; }
-  .folder-bottom {
-    top: 250px;
-    height: min(450px, calc(100vh - 80px - 250px - 28px));
-  }
   .title-wrap .script,
-  .title-wrap h1 { font-size: clamp(110px, min(14vw, 26vh), 260px); }
+  .title-wrap h1 { font-size: clamp(110px, min(14vw, 26vh), 250px); }
 }
