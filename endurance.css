@@ -560,7 +560,7 @@ body {
 
 /* ---------- My stats ---------- */
 .ed-stats-sec {
-  padding: 0 var(--gutter) clamp(56px, 9vh, 100px);
+  padding: clamp(56px, 9vh, 100px) var(--gutter) 0;
   background: var(--cream);
 }
 
