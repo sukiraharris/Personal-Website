@@ -5,9 +5,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Endurance — Sukira Harris</title>
         <link rel="stylesheet" href="../style.css">
-        <link rel="stylesheet" href="../project.css">
+        <link rel="stylesheet" href="../endurance.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Libre+Caslon+Text&family=Jost:wght@400;500&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400;1,6..96,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     </head>
     <body>
         <header class="top-bar">
@@ -22,111 +22,99 @@
             </div>
         </header>
 
-        <main class="project-page">
-            <header class="pp-head">
-                <a class="pp-eyebrow" href="portfolio.html">Portfolio</a>
-                <h1 class="pp-title">Endurance</h1>
-                <p class="pp-sub"><span>Running</span><span>Cycling</span><span>Long distance</span></p>
+        <main class="ed-main">
+
+            <!-- ============ Masthead ============ -->
+            <header class="ed-mast">
+                <div class="ed-mast-top">
+                    <a class="ed-kicker" href="portfolio.html">The Personal Archives / No. 04</a>
+                    <p class="ed-tagline">Sport &amp; the art of persistence</p>
+                </div>
+                <h1 class="ed-title">Endur<em>ance.</em></h1>
+                <div class="ed-mast-bottom">
+                    <p class="ed-tags">Running <span>&middot;</span> Cycling <span>&middot;</span> Beyond</p>
+                    <p class="ed-intro">More than fitness: a collection of races, distances, setbacks and the small decisions that make the miles add up.</p>
+                </div>
             </header>
 
-            <!-- Next challenge: countdown updates itself every day -->
-            <section class="en-next">
-                <div class="en-next-text">
-                    <p class="en-next-eyebrow">Next challenge &middot; Testing my limits</p>
-                    <h2 class="en-next-title">My first <em>half Ironman</em></h2>
-                    <p class="en-next-sub">I’ve just signed up for my first half Ironman: a 1.9 km swim, a 90 km bike and a 21.1 km run, back to back. It’s the biggest test of my abilities yet.</p>
-                </div>
-                <div class="en-count" aria-live="polite">
-                    <strong id="en-days">321</strong>
-                    <span id="en-days-label">days to go</span>
-                </div>
-            </section>
-
-            <figure class="pp-hero en-hero">
-                <img src="../Images/fitness/boston-10k-women-2026/finish-line.jpg" alt="Crossing the finish line at the Boston 10K for Women in 2026" style="object-position: 60% 60%;" />
-                <figcaption>Boston 10K for Women &middot; 10 October 2026 &middot; 43:24</figcaption>
-            </figure>
-
-            <p class="pp-intro">I run marathons and cycle, and over the years I’ve also been involved in rugby, dance, hiking, and calisthenics. Endurance is where I learn the most about how I approach a challenge.</p>
-
-            <!-- Boston 10K: 2024 vs 2026 -->
-            <section class="en-race">
-                <figure class="en-race-img">
-                    <img src="../Images/fitness/boston-10k-women-2024/finish-stretch.jpg" alt="Running the final stretch of the Boston 10K for Women in 2024" />
-                    <figcaption>2024 &middot; my first 10K</figcaption>
+            <!-- ============ 01 Next challenge ============ -->
+            <section class="ed-next">
+                <figure class="ed-next-photo">
+                    <img src="../Images/fitness/boston-10k-women-2026/finish-line.jpg" alt="Finishing the Boston 10K for Women in October 2026" />
+                    <figcaption>Boston 10K for Women &middot; October 2026</figcaption>
                 </figure>
-
-                <div class="en-race-text">
-                    <p class="en-race-eyebrow">Boston 10K for Women</p>
-                    <h2 class="en-race-title">Four minutes in two years</h2>
-
-                    <div class="en-compare">
-                        <div>
-                            <span class="en-compare-year">12 Oct 2024</span>
-                            <strong>47:38</strong>
-                            <span class="en-compare-label">First 10K</span>
-                        </div>
-                        <span class="en-compare-arrow" aria-hidden="true">&rarr;</span>
-                        <div>
-                            <span class="en-compare-year">10 Oct 2026</span>
-                            <strong>43:24</strong>
-                            <span class="en-compare-label">50th running</span>
-                        </div>
-                        <div class="en-compare-drop">
-                            <strong>&minus;4:14</strong>
-                            <span class="en-compare-label">Faster</span>
-                        </div>
+                <div class="ed-next-panel">
+                    <p class="ed-label">01 / The next challenge</p>
+                    <h2 class="ed-next-title">My first <em>half Ironman.</em></h2>
+                    <p class="ed-next-sub">1.9 km in the water. 90 km on the bike. 21.1 km on foot. One finish line.</p>
+                    <div class="ed-count" aria-live="polite">
+                        <strong id="en-days">321</strong>
+                        <span id="en-days-label">Days to go<br>until race day</span>
                     </div>
-
-                    <p>The Boston 10K for Women on 12 October 2024 was my first ever 10K race. I crossed the line in 47:38, and I remember thinking how far ten kilometres felt.</p>
-                    <p>Two years later I came back for the race’s fiftieth running and finished in 43:24, more than four full minutes faster on the same course. That time came from two years of consistent training, building up through marathons, long runs and cycling, and learning how to pace myself instead of just running hard.</p>
-                    <p>Taking four minutes off a 10K doesn’t happen in one race. It’s what showing up week after week looks like.</p>
                 </div>
             </section>
 
-            <!-- Two marathons, one summer -->
-            <section class="en-race en-race-flip">
-                <div class="en-race-pair">
-                    <figure class="en-race-img">
-                        <img src="../Images/fitness/bayside-run-marathon/running-coastal-path.jpg" alt="Running along the coastal path during the Bayside Run Marathon in Sydney" />
-                        <figcaption>Bayside &middot; Sydney</figcaption>
+            <!-- ============ 02 Four minutes ============ -->
+            <section class="ed-section ed-light">
+                <h2 class="ed-h">Four minutes <em>in two years.</em></h2>
+                <div class="ed-split">
+                    <figure class="ed-photo">
+                        <img src="../Images/fitness/boston-10k-women-2024/finish-stretch.jpg" alt="Running the Boston 10K for Women in 2024" />
+                        <figcaption>The beginning &middot; Boston, 2024</figcaption>
                     </figure>
-                    <figure class="en-race-img">
-                        <img src="../Images/fitness/thames-meander-marathon/post-race-recovery.jpg" alt="Being cooled down with a fan after the Thames Meander Marathon in London" />
-                        <figcaption>Thames &middot; London</figcaption>
-                    </figure>
-                </div>
-
-                <div class="en-race-text">
-                    <p class="en-race-eyebrow">Two marathons &middot; Summer 2026</p>
-                    <h2 class="en-race-title">Eight weeks apart</h2>
-
-                    <div class="en-compare">
-                        <div>
-                            <span class="en-compare-year">Marathon one</span>
-                            <strong>3:51</strong>
-                            <span class="en-compare-label">Bayside Run &middot; Sydney</span>
+                    <div class="ed-copy">
+                        <p class="ed-lede">The same race, two years apart. A very different runner at the finish line.</p>
+                        <div class="ed-compare">
+                            <div><strong>47:38</strong><span>2024 &middot; First 10K</span></div>
+                            <span class="ed-arrow" aria-hidden="true">&rarr;</span>
+                            <div><strong>43:24</strong><span>2026 &middot; 50th running</span></div>
+                            <div class="ed-drop"><strong>&minus;4:14</strong><span>Faster</span></div>
                         </div>
-                        <span class="en-compare-arrow" aria-hidden="true">&rarr;</span>
-                        <div>
-                            <span class="en-compare-year">Marathon two</span>
-                            <strong>4:02</strong>
-                            <span class="en-compare-label">Thames Meander &middot; London</span>
-                        </div>
-                        <div class="en-compare-drop">
-                            <strong>8</strong>
-                            <span class="en-compare-label">Weeks apart</span>
-                        </div>
+                        <p>The Boston 10K for Women on 12 October 2024 was my first ever 10K race. I crossed the line in 47:38, and I remember thinking how far ten kilometres felt.</p>
+                        <p>Two years later I came back for the race’s fiftieth running and finished in 43:24, more than four full minutes faster on the same course. That time came from two years of consistent training, building up through marathons, long runs and cycling, and learning how to pace myself instead of just running hard.</p>
+                        <p>Taking four minutes off a 10K doesn’t happen in one race. It’s what showing up week after week looks like.</p>
                     </div>
-
-                    <p>In the summer of 2026 I ran two full marathons on opposite sides of the world, in Sydney and then London, only eight weeks apart. Neither went the way I had planned.</p>
-                    <p>I ran the Bayside Run Marathon in Sydney on ruptured ligaments and shin splints. Every kilometre was a negotiation with my body, and finishing in 3:51 taught me more about patience and pacing than any training run had.</p>
-                    <p>Eight weeks later I lined up for the Thames Meander Marathon in London in 98&deg;F heat. With so little time to recover, the goal was simply to keep moving and get to the finish, and I crossed the line in 4:02.</p>
-                    <p>Two marathons, two very different kinds of hard. Together they showed me that endurance is less about the perfect race and more about adapting to the one you are given.</p>
                 </div>
             </section>
 
-            <a class="pp-back" href="portfolio.html"><span>&larr;</span> Back to Portfolio</a>
+            <!-- ============ 03 Eight weeks ============ -->
+            <section class="ed-section ed-dark">
+                <h2 class="ed-h">Eight weeks <em>apart.</em></h2>
+                <div class="ed-split ed-split-flip">
+                    <div class="ed-copy">
+                        <p class="ed-lede">Two marathons on opposite sides of the world. Neither went the way I had planned.</p>
+                        <div class="ed-compare">
+                            <div><strong>3:51</strong><span>Sydney &middot; Bayside</span></div>
+                            <span class="ed-arrow" aria-hidden="true">&rarr;</span>
+                            <div><strong>4:02</strong><span>London &middot; Thames</span></div>
+                        </div>
+                        <p>In the summer of 2026 I ran two full marathons, in Sydney and then London, only eight weeks apart.</p>
+                        <p>I ran the Bayside Run Marathon in Sydney on ruptured ligaments and shin splints. Every kilometre was a negotiation with my body, and finishing in 3:51 taught me more about patience and pacing than any training run had.</p>
+                        <p>Eight weeks later I lined up for the Thames Meander Marathon in London in 98&deg;F heat. With so little time to recover, the goal was simply to keep moving and get to the finish, and I crossed the line in 4:02.</p>
+                        <p>Two marathons, two very different kinds of hard. Together they showed me that endurance is less about the perfect race and more about adapting to the one you are given.</p>
+                    </div>
+                    <div class="ed-pair">
+                        <figure class="ed-photo">
+                            <img src="../Images/fitness/bayside-run-marathon/running-coastal-path.jpg" alt="Running the Bayside Marathon in Sydney" />
+                            <figcaption>01 / Bayside &middot; Sydney</figcaption>
+                        </figure>
+                        <figure class="ed-photo">
+                            <img src="../Images/fitness/thames-meander-marathon/post-race-recovery.jpg" alt="Recovering after the Thames Meander Marathon in London" />
+                            <figcaption>02 / Thames &middot; London</figcaption>
+                        </figure>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ============ Closing ============ -->
+            <section class="ed-close">
+                <p class="ed-kicker">The story continues</p>
+                <h2 class="ed-close-title">There is always <em>further to go.</em></h2>
+                <span class="ed-close-rule" aria-hidden="true"></span>
+                <p class="ed-close-text">Running is more than fitness. It’s a way to push through something hard, past the boundaries I thought I had, and to find out they were never fixed. That lesson doesn’t stay on the road. It comes with me into my studies, my work and everything I build.</p>
+                <p class="ed-close-text ed-close-small">Marathons, long rides, early swims &mdash; and a half Ironman on the horizon. This is a record of the process, not just the finish lines.</p>
+                <a class="ed-back" href="portfolio.html"><span>&larr;</span> Back to Portfolio</a>
+            </section>
         </main>
 
         <footer class="bottom-bar">
@@ -143,10 +131,10 @@
                 var days = Math.round((race - today) / 86400000);
                 var num = document.getElementById('en-days');
                 var label = document.getElementById('en-days-label');
-                if (days > 1) { num.textContent = days; label.textContent = 'days to go'; }
-                else if (days === 1) { num.textContent = 1; label.textContent = 'day to go'; }
-                else if (days === 0) { num.textContent = 'Today'; label.textContent = 'race day'; }
-                else { num.textContent = 'Done'; label.textContent = 'race complete'; }
+                if (days > 1) { num.textContent = days; label.innerHTML = 'Days to go<br>until race day'; }
+                else if (days === 1) { num.textContent = 1; label.innerHTML = 'Day to go<br>until race day'; }
+                else if (days === 0) { num.textContent = 'Today'; label.innerHTML = 'It’s<br>race day'; }
+                else { num.textContent = 'Done'; label.innerHTML = 'Race<br>complete'; }
             })();
         </script>
     </body>
