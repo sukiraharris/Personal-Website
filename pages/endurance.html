@@ -39,65 +39,18 @@
 
             <!-- ============ The map ============ -->
             <section class="ed-section ed-map">
-                <svg class="ed-map-trail" viewBox="0 0 900 260" preserveAspectRatio="none" aria-hidden="true">
-                    <path d="M0 250 C120 230 180 170 300 175 C390 178 420 120 470 85 C520 40 600 20 660 30 C720 40 740 140 790 170 C830 195 860 200 900 190"/>
-                </svg>
-                <svg class="ed-map-compass" viewBox="0 0 40 60" aria-hidden="true">
-                    <text x="20" y="9" text-anchor="middle">N</text>
-                    <path d="M20 14 L22.5 34 L20 54 L17.5 34 Z"/><path d="M4 34 L20 31.5 L36 34 L20 36.5 Z"/>
-                </svg>
-
-                <div class="ed-map-grid">
+                <div class="ed-map-head">
+                    <div>
+                        <p class="ed-kicker">The map</p>
+                        <h2 class="ed-h">Every mile, <em>mapped.</em></h2>
+                    </div>
                     <div class="ed-map-copy">
-                        <p class="ed-map-kicker">The map</p>
-                        <h2 class="ed-map-title">Every mile, <em>mapped.</em></h2>
-                        <p class="ed-map-text">Check out a map I made of all the places I’ve run, cycled and hiked over the last two years.</p>
-                        <a class="ed-map-link" href="https://sukiraharris.github.io/run-globe/" target="_blank" rel="noopener">Explore the full map <span aria-hidden="true">&#10230;</span></a>
+                        <p class="ed-lede">Check out a map I made of all the places I’ve run, cycled and hiked over the last two years.</p>
+                        <a class="ed-map-btn" href="https://sukiraharris.github.io/run-globe/" target="_blank" rel="noopener">Explore the full map <span>&rarr;</span></a>
                     </div>
-
-                    <div class="ed-map-card">
-                        <div class="ed-map-card-left">
-                            <div class="ed-chips" role="group" aria-label="Filter the chart by sport">
-                                <button type="button" data-sport="run" aria-pressed="true"><i></i>Runs</button>
-                                <button type="button" data-sport="ride" aria-pressed="false"><i></i>Rides</button>
-                                <button type="button" data-sport="hike" aria-pressed="false"><i></i>Hikes &amp; walks</button>
-                                <button type="button" data-sport="all" aria-pressed="false"><i></i>By sport</button>
-                            </div>
-                            <ul class="ed-stats">
-                                <li><strong id="ed-stat-n">142</strong><span id="ed-stat-label">Runs</span></li>
-                                <li><strong>4</strong><span>Countries</span></li>
-                                <li><strong>2</strong><span>Years</span></li>
-                            </ul>
-                            <ol class="ed-chart" aria-label="Activities per month, January 2025 to October 2026">
-                                <li data-run="1" data-ride="0" data-hike="0"><span class="bar"></span><span class="mo">J</span></li>
-                                <li data-run="0" data-ride="0" data-hike="0"><span class="bar"></span><span class="mo">F</span></li>
-                                <li data-run="6" data-ride="0" data-hike="0"><span class="bar"></span><span class="mo">M</span></li>
-                                <li data-run="10" data-ride="0" data-hike="0"><span class="bar"></span><span class="mo">A</span></li>
-                                <li data-run="9" data-ride="0" data-hike="2"><span class="bar"></span><span class="mo">M</span></li>
-                                <li data-run="2" data-ride="0" data-hike="0"><span class="bar"></span><span class="mo">J</span></li>
-                                <li data-run="3" data-ride="2" data-hike="1"><span class="bar"></span><span class="mo">J</span></li>
-                                <li data-run="3" data-ride="3" data-hike="1"><span class="bar"></span><span class="mo">A</span></li>
-                                <li data-run="13" data-ride="3" data-hike="1"><span class="bar"></span><span class="mo">S</span></li>
-                                <li data-run="1" data-ride="1" data-hike="0"><span class="bar"></span><span class="mo">O</span></li>
-                                <li data-run="4" data-ride="0" data-hike="0"><span class="bar"></span><span class="mo">N</span></li>
-                                <li data-run="1" data-ride="1" data-hike="0"><span class="bar"></span><span class="mo">D</span></li>
-                                <li data-run="1" data-ride="0" data-hike="0"><span class="bar"></span><span class="mo">J</span></li>
-                                <li data-run="0" data-ride="0" data-hike="0"><span class="bar"></span><span class="mo">F</span></li>
-                                <li data-run="8" data-ride="0" data-hike="0"><span class="bar"></span><span class="mo">M</span></li>
-                                <li data-run="8" data-ride="3" data-hike="0"><span class="bar"></span><span class="mo">A</span></li>
-                                <li data-run="12" data-ride="0" data-hike="3"><span class="bar"></span><span class="mo">M</span></li>
-                                <li data-run="2" data-ride="0" data-hike="2"><span class="bar"></span><span class="mo">J</span></li>
-                                <li data-run="18" data-ride="7" data-hike="2"><span class="bar"></span><span class="mo">J</span></li>
-                                <li data-run="9" data-ride="5" data-hike="1"><span class="bar"></span><span class="mo">A</span></li>
-                                <li data-run="14" data-ride="3" data-hike="1"><span class="bar"></span><span class="mo">S</span></li>
-                                <li data-run="15" data-ride="4" data-hike="0"><span class="bar"></span><span class="mo">O</span></li>
-                            </ol>
-                        </div>
-                        <a class="ed-map-card-map" href="https://sukiraharris.github.io/run-globe/" target="_blank" rel="noopener" aria-label="Open the full interactive map">
-                            <img src="../Images/fitness/run-map.svg" alt="World map with a dot for each place I've run, cycled and hiked" />
-                            <span class="ed-map-go" aria-hidden="true">&rarr;</span>
-                        </a>
-                    </div>
+                </div>
+                <div class="ed-map-frame">
+                    <iframe src="https://sukiraharris.github.io/run-globe/" title="Interactive globe of every place I've run, cycled and hiked" loading="lazy" allow="fullscreen"></iframe>
                 </div>
             </section>
 
@@ -199,39 +152,6 @@
                 else if (days === 1) { num.textContent = 1; label.innerHTML = 'Day to go<br>until race day'; }
                 else if (days === 0) { num.textContent = 'Today'; label.innerHTML = 'It’s<br>race day'; }
                 else { num.textContent = 'Done'; label.innerHTML = 'Race<br>complete'; }
-            })();
-        </script>
-        <script>
-            // Map card: filter the monthly chart by sport
-            (function () {
-                var chart = document.querySelector('.ed-chart');
-                if (!chart) return;
-                var bars = chart.querySelectorAll('li');
-                var labels = { run: 'Runs', ride: 'Rides', hike: 'Hikes & walks', all: 'Activities' };
-                function show(sport) {
-                    var counts = [].map.call(bars, function (li) {
-                        var r = +li.dataset.run, b = +li.dataset.ride, h = +li.dataset.hike;
-                        return { run: r, ride: b, hike: h, all: r + b + h };
-                    });
-                    var max = Math.max.apply(null, counts.map(function (c) { return c.all; }));
-                    var total = 0;
-                    counts.forEach(function (c, i) {
-                        var bar = bars[i].querySelector('.bar');
-                        total += c[sport];
-                        bar.style.height = Math.max(3, c[sport] / max * 100) + '%';
-                        bar.className = 'bar is-' + sport;
-                        bars[i].title = c[sport] + ' ' + labels[sport].toLowerCase();
-                    });
-                    document.getElementById('ed-stat-n').textContent = total;
-                    document.getElementById('ed-stat-label').textContent = labels[sport];
-                    document.querySelectorAll('.ed-chips button').forEach(function (b) {
-                        b.setAttribute('aria-pressed', b.dataset.sport === sport);
-                    });
-                }
-                document.querySelectorAll('.ed-chips button').forEach(function (b) {
-                    b.addEventListener('click', function () { show(b.dataset.sport); });
-                });
-                show('run');
             })();
         </script>
     </body>
