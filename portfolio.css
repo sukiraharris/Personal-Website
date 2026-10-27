@@ -62,7 +62,8 @@ body {
 
 .folder-mid {
   top: 200px;
-  height: 400px;
+  /* stays tucked behind the card, however short the window */
+  height: min(400px, calc(100vh - 320px));
   background: #000000;
   z-index: 2;
   box-shadow: inset 0 8px 16px rgba(0,0,0,0.4);
@@ -694,6 +695,9 @@ a.folder {
   position: absolute;
   inset: 0;
   background: rgba(55, 38, 30, 0.2);
+  /* a touch more contrast on the background photo */
+  -webkit-backdrop-filter: contrast(1.15);
+  backdrop-filter: contrast(1.15);
   pointer-events: none;
   z-index: 0;
 }
