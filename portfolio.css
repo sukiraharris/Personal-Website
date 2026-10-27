@@ -139,21 +139,20 @@ body {
 }
 
 .folder-back .tab {
-  right: 5%;
+  right: 4%;
   background: linear-gradient(#e2dedb, #c9c4c0);
   color: #2a2222;
 }
 
 .folder-mid .tab {
-  left: 5%;
+  left: 4%;
   background: linear-gradient(#2a2424, #0d0b0b);
 }
 
 .folder-front .tab {
-  left: 50%;
-  transform: translateX(-50%);
+  left: 25%;
   top: -34px;
-  width: clamp(180px, 26%, 340px);
+  width: 24%;
   background: linear-gradient(#8e2233, #5c0f1c);
 }
 
@@ -966,4 +965,155 @@ a.folder {
 @media (max-height: 880px) {
   .title-wrap .script,
   .title-wrap h1 { font-size: clamp(110px, min(14vw, 26vh), 250px); }
+}
+
+/* ---------- Endurance folder ---------- */
+.folder-end {
+  top: 205px;
+  height: 300px;
+  background: #7a6555;
+  z-index: 2;
+  box-shadow: inset 0 8px 16px rgba(0,0,0,0.35);
+}
+
+.folder-end .tab {
+  left: 52%;
+  width: 21%;
+  letter-spacing: 0.16em;
+  transition: opacity 0.3s ease;
+  background: linear-gradient(#9a8573, #6c5747);
+  color: #f5ede4;
+}
+
+/* Hide the Endurance tab while the Coding or Writing folder is open */
+.folder-mid:hover ~ .folder-end .tab,
+.folder-back:hover ~ .folder-end .tab {
+  opacity: 0;
+}
+
+/* Tuck the Creative tab away while the Endurance folder is open */
+.folder-end:hover ~ .folder-front .tab {
+  opacity: 0;
+}
+
+.en-inner {
+  position: absolute;
+  top: 12px;
+  left: 14px;
+  right: 14px;
+  height: 196px;
+  display: grid;
+  grid-template-columns: 1.25fr 1fr 0.8fr;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #efe8df;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.5);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.folder-end:hover .en-inner {
+  opacity: 1;
+}
+
+.en-photo {
+  position: relative;
+  overflow: hidden;
+}
+
+.en-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 62% 60%;
+  display: block;
+  filter: grayscale(0.35) sepia(0.25) contrast(1.05);
+}
+
+.en-photo::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, transparent 60%, #efe8df 100%);
+}
+
+.en-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 8px 0 4px;
+  min-width: 0;
+}
+
+.en-eyebrow {
+  margin: 0 0 4px;
+  font-family: 'Courier Prime', 'Courier New', monospace;
+  font-size: clamp(8px, 0.7vw, 11px);
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #6c5747;
+}
+
+.en-big {
+  margin: 0 0 6px;
+  font-family: 'Bodoni Moda', 'Playfair Display', Georgia, serif;
+  font-size: clamp(26px, 3vw, 50px);
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  color: #6e0f1b;
+}
+
+.en-sub {
+  margin: 0 0 12px;
+  font-family: 'Libre Caslon Text', Georgia, serif;
+  font-style: italic;
+  font-size: clamp(10px, 0.9vw, 15px);
+  color: #2a2422;
+}
+
+.en-cta {
+  align-self: flex-start;
+  padding-bottom: 3px;
+  border-bottom: 1px solid #6e0f1b;
+  font-family: 'Courier Prime', 'Courier New', monospace;
+  font-size: clamp(8px, 0.7vw, 11px);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #1d1a19;
+}
+
+.en-stats {
+  list-style: none;
+  margin: 0;
+  padding: 0 14px 0 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 14px;
+  border-left: 1px solid rgba(29, 26, 25, 0.2);
+}
+
+.en-stats li {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.en-stats strong {
+  font-family: 'Bodoni Moda', 'Playfair Display', Georgia, serif;
+  font-size: clamp(20px, 2.2vw, 36px);
+  font-weight: 500;
+  line-height: 1;
+  font-variant-numeric: lining-nums;
+  color: #1d1a19;
+}
+
+.en-stats span {
+  font-family: 'Courier Prime', 'Courier New', monospace;
+  font-size: clamp(7px, 0.6vw, 10px);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #6c5747;
 }
