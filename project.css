@@ -509,3 +509,17 @@ a.pp-mag:hover {
   .en-race-img { max-width: 320px; }
   .en-compare-drop { margin-left: 0; }
 }
+
+/* Mirrored race section: photo on the right */
+.en-race-flip {
+  grid-template-columns: minmax(0, 1.6fr) minmax(220px, 0.75fr);
+}
+
+.en-race-flip .en-race-img {
+  order: 2;
+}
+
+@media (max-width: 800px) {
+  .en-race-flip { grid-template-columns: 1fr; }
+  .en-race-flip .en-race-img { order: 0; }
+}
