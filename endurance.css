@@ -488,6 +488,7 @@ body {
   position: relative;
   background: var(--cream);
   border-top: 1px solid var(--rule-light);
+  padding-top: clamp(44px, 7vh, 80px);
   overflow: hidden;
 }
 
