@@ -560,12 +560,12 @@ body {
 
 /* ---------- My stats ---------- */
 .ed-stats-sec {
-  padding: clamp(56px, 9vh, 100px) var(--gutter) 0;
+  padding: 0;
   background: var(--cream);
 }
 
 .ed-stats-h {
-  margin: 0 0 18px;
+  margin: 0 var(--gutter) 18px;
   padding: 0;
   font-family: var(--sans);
   font-size: 14px;
@@ -581,9 +581,10 @@ body {
   grid-template-columns: repeat(5, 1fr);
   list-style: none;
   margin: 0;
-  padding: clamp(22px, 3vh, 32px) 0;
-  border-top: 1px solid var(--rule-light);
-  border-bottom: 1px solid var(--rule-light);
+  padding: clamp(22px, 3vh, 32px) var(--gutter);
+  /* full-width rules, edge to edge */
+  border-top: 2px solid rgba(29, 26, 25, 0.55);
+  border-bottom: 2px solid rgba(29, 26, 25, 0.55);
 }
 
 .ed-pbs li {
@@ -628,4 +629,9 @@ body {
   .ed-pbs { grid-template-columns: repeat(2, 1fr); row-gap: 24px; }
   .ed-pbs li:nth-child(odd) { border-left: none; }
   .ed-pbs li:last-child { grid-column: 1 / -1; }
+}
+
+/* the stats' bottom rule already separates it from the map */
+.ed-stats-sec + .ed-map {
+  border-top: none;
 }
