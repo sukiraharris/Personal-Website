@@ -23,7 +23,7 @@ body {
   min-height: 70vh;
   overflow: hidden;
   padding-top: 120px;
-  background-image: url('Images/portfolio_bg.png');
+  background-image: url('Images/web/portfolio_bg.jpg');
   background-size: cover;
   background-position: center;
 }
@@ -1116,4 +1116,92 @@ a.folder {
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: #6c5747;
+}
+
+/* ---------- Phones: stack the folders as tappable tabs ---------- */
+@media (max-width: 700px) {
+  .portfolio-cover {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    min-height: auto;
+    padding: 28px 16px 40px;
+  }
+
+  .pc-collage {
+    display: none;
+  }
+
+  .folder,
+  .folder:hover,
+  .folder-front:hover {
+    position: relative;
+    top: auto !important;
+    left: auto;
+    width: auto;
+    height: auto !important;
+    transform: none !important;
+    pointer-events: auto;
+    background: none !important;
+    box-shadow: none !important;
+    filter: none;
+    border-radius: 12px;
+  }
+
+  /* the Portfolio card first, then the four sections */
+  .folder-bottom {
+    order: -1;
+    margin-bottom: 8px;
+    padding: 34px 16px 30px;
+    background-color: #f3efe9 !important;
+    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.35) !important;
+  }
+  .folder-mid { order: 1; }
+  .folder-front { order: 2; }
+  .folder-end { order: 3; }
+  .folder-back { order: 4; }
+
+  .title-wrap {
+    position: static;
+    transform: none;
+    width: auto;
+  }
+
+  .title-wrap h1,
+  .title-wrap .script {
+    font-size: 64px !important;
+  }
+
+  .title-wrap h2 {
+    font-size: 18px;
+  }
+
+  /* each tab becomes a full-width row with an arrow */
+  .folder .tab {
+    position: static;
+    width: auto !important;
+    height: auto;
+    transform: none;
+    justify-content: space-between;
+    padding: 20px 22px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    font-size: 17px;
+    opacity: 1 !important;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+  }
+
+  .folder .tab::after {
+    content: "\2192";
+    font-family: Georgia, serif;
+    letter-spacing: 0;
+  }
+
+  /* no hover on phones, so skip the slide-up panels */
+  .cr-inner,
+  .cd-inner,
+  .wr-inner,
+  .en-inner {
+    display: none;
+  }
 }

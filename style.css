@@ -122,3 +122,32 @@ main {
 }
 
 
+
+/* ---------- Phones: menu fits the screen ---------- */
+@media (max-width: 700px) {
+  .top-bar {
+    height: 64px;
+  }
+  .nav {
+    gap: 20px;
+    padding: 0 16px 0 124px;
+  }
+  .nav::after {
+    display: none;
+  }
+  .logo {
+    top: -22px;
+    left: -12px;
+  }
+  .logo img {
+    height: 100px;
+    width: 126px;
+  }
+  .links {
+    gap: 22px;
+  }
+  .links a {
+    font-size: 12px;
+    letter-spacing: 0.16em;
+  }
+}
