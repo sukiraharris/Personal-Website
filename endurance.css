@@ -631,7 +631,7 @@ body {
   .ed-pbs li:last-child { grid-column: 1 / -1; }
 }
 
-/* the stats' bottom rule already separates it from the map */
-.ed-stats-sec + .ed-map {
-  border-top: none;
+/* breathing room before the dark marathon section */
+.ed-map + .ed-stats-sec {
+  padding-bottom: clamp(56px, 9vh, 100px);
 }
