@@ -403,3 +403,16 @@
   object-fit: cover;
   object-position: 50% 30%;
 }
+
+/* side + top calibration views, side by side */
+.om-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.om-pair .om-vid {
+  aspect-ratio: 720 / 562;
+  object-fit: cover;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
+}

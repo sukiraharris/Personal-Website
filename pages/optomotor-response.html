@@ -127,7 +127,13 @@
                     </div>
                     <div class="om-figs">
                         <figure><img src="../Images/web/omr/sleap-top.jpg" alt="SLEAP tracking six fish from the top camera" /><figcaption>SLEAP tracking &middot; top view</figcaption></figure>
-                        <figure><img src="../Images/web/omr/charuco.jpg" alt="ChArUco calibration board seen from the side camera" /><figcaption>ChArUco calibration</figcaption></figure>
+                        <figure>
+                            <div class="om-pair">
+                                <video class="om-vid om-sync" src="../Images/web/omr/video/charuco-side.mp4" poster="../Images/web/omr/video/charuco-side.jpg" autoplay muted loop playsinline preload="metadata" aria-label="ChArUco board in six positions, side camera"></video>
+                                <video class="om-vid om-sync" src="../Images/web/omr/video/charuco-top.mp4" poster="../Images/web/omr/video/charuco-top.jpg" autoplay muted loop playsinline preload="metadata" aria-label="The same six board positions, top camera"></video>
+                            </div>
+                            <figcaption>ChArUco calibration &middot; side + top, same poses</figcaption>
+                        </figure>
                     </div>
                 </div>
             </section>
@@ -148,6 +154,13 @@
         <script src="../main.js"></script>
         <script>
             // Respect "reduce motion": show the first frame instead of looping
+            // Keep the two calibration views on the same board position
+            var sync = document.querySelectorAll('.om-sync');
+            if (sync.length === 2) {
+                sync[1].addEventListener('timeupdate', function () {
+                    if (Math.abs(sync[1].currentTime - sync[0].currentTime) > 0.15) sync[1].currentTime = sync[0].currentTime;
+                });
+            }
             if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
                 document.querySelectorAll('.om-vid').forEach(function (v) { v.removeAttribute('autoplay'); v.pause(); });
             }
