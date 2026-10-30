@@ -126,7 +126,13 @@
                         </ol>
                     </div>
                     <div class="om-figs">
-                        <figure><img src="../Images/web/omr/sleap-top.jpg" alt="SLEAP tracking six fish from the top camera" /><figcaption>SLEAP tracking &middot; top view</figcaption></figure>
+                        <figure>
+                            <div class="om-pair om-pair-track">
+                                <video class="om-vid" src="../Images/web/omr/video/tracking-top.mp4" poster="../Images/web/omr/video/tracking-top.jpg" autoplay muted loop playsinline preload="metadata" aria-label="SLEAP tracking six fish from the top camera"></video>
+                                <video class="om-vid" src="../Images/web/omr/video/tracking-side.mp4" poster="../Images/web/omr/video/tracking-side.jpg" autoplay muted loop playsinline preload="metadata" aria-label="SLEAP tracking the fish from the side camera"></video>
+                            </div>
+                            <figcaption>SLEAP tracking &middot; top + side</figcaption>
+                        </figure>
                         <figure>
                             <div class="om-pair">
                                 <video class="om-vid om-sync" src="../Images/web/omr/video/charuco-side.mp4" poster="../Images/web/omr/video/charuco-side.jpg" autoplay muted loop playsinline preload="metadata" aria-label="ChArUco board in six positions, side camera"></video>
@@ -135,6 +141,17 @@
                             <figcaption>ChArUco calibration &middot; side + top, same poses</figcaption>
                         </figure>
                     </div>
+                </div>
+            </section>
+
+            <!-- ============ Result ============ -->
+            <section class="cd-light om-section">
+                <p class="om-label">05 / The result</p>
+                <h2 class="om-h">Every fish, tracked in three dimensions.</h2>
+                <p class="om-text om-text-wide">Triangulated poses for both species, frame by frame: length, depth and height inside the arena.</p>
+                <div class="om-vids om-vids-two">
+                    <figure><video class="om-vid" src="../Images/web/omr/video/projection-medaka.mp4" poster="../Images/web/omr/video/projection-medaka.jpg" autoplay muted loop playsinline preload="metadata" aria-label="3D projection of four medaka swimming in the arena"></video><figcaption>Medaka &middot; 3D projection</figcaption></figure>
+                    <figure><video class="om-vid" src="../Images/web/omr/video/projection-zebrafish.mp4" poster="../Images/web/omr/video/projection-zebrafish.jpg" autoplay muted loop playsinline preload="metadata" aria-label="3D projection of two zebrafish swimming in the arena"></video><figcaption>Zebrafish &middot; 3D projection</figcaption></figure>
                 </div>
             </section>
 

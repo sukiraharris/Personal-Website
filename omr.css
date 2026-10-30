@@ -416,3 +416,27 @@
   object-fit: cover;
   box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
 }
+
+/* tracking clips have different shapes: let each keep its own */
+.om-pair-track {
+  grid-template-columns: 480fr 360fr;
+  align-items: start;
+}
+
+.om-pair-track .om-vid {
+  aspect-ratio: auto;
+}
+
+/* results: two 3D projections */
+.om-vids-two {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.om-vids-two .om-vid {
+  background: #fbfbfa;
+}
+
+/* results and tools are both light, so close the gap between them */
+.om-section + .om-tools-sec {
+  padding-top: 0;
+}
