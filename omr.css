@@ -440,3 +440,21 @@
 .om-section + .om-tools-sec {
   padding-top: 0;
 }
+
+/* reflection: paragraphs stack with space between */
+.om-reflect .om-text + .om-text {
+  margin-top: 1em;
+}
+
+.om-reflect .om-h {
+  margin-bottom: 0;
+}
+
+.om-reflect .om-split {
+  align-items: start;
+}
+
+/* tools follow a dark section, so restore its top spacing */
+.om-reflect + .om-tools-sec {
+  padding-top: clamp(36px, 6vh, 64px);
+}
