@@ -70,7 +70,7 @@
                 <div class="om-split om-split-media">
                     <div class="om-photos">
                         <img src="../Images/web/omr/rig.jpg" alt="The recording rig with cameras mounted around the arena" />
-                        <img src="../Images/web/omr/dragstrip-top.jpg" alt="Top view of the Dragstrip arena with moving stripes" />
+                        <video class="om-vid" src="../Images/web/omr/video/dragstrip-stripes.mp4" poster="../Images/web/omr/video/dragstrip-stripes.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Moving stripes beneath the Dragstrip arena"></video>
                     </div>
                     <div>
                         <p class="om-label">01 / The Dragstrip</p>
@@ -80,9 +80,22 @@
                 </div>
             </section>
 
+            <!-- ============ Detection ============ -->
+            <section class="cd-light om-section">
+                <p class="om-label">02 / Finding the fish</p>
+                <h2 class="om-h">First, separate the fish from the stripes.</h2>
+                <p class="om-text om-text-wide">Each recording is background-subtracted, so only the fish remain as bright points against black. This first pass shows where they are before the pose models take over.</p>
+                <div class="om-vids">
+                    <figure class="om-vid-wide"><video class="om-vid" src="../Images/web/omr/video/side-view-detection.mp4" poster="../Images/web/omr/video/side-view-detection.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Side view: raw footage and detected fish"></video><figcaption>Side view &middot; raw &rarr; detected</figcaption></figure>
+                    <figure><video class="om-vid" src="../Images/web/omr/video/top-view-detection.mp4" poster="../Images/web/omr/video/top-view-detection.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Top view: raw footage and detected fish"></video><figcaption>Top view &middot; raw &rarr; detected</figcaption></figure>
+                    <figure><video class="om-vid" src="../Images/web/omr/video/old-fellas-detection.mp4" poster="../Images/web/omr/video/old-fellas-detection.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Adult fish: raw footage and detected fish"></video><figcaption>Adult fish &middot; raw &rarr; detected</figcaption></figure>
+                    <figure><video class="om-vid om-vid-tall" src="../Images/web/omr/video/old-fellas-stripes.mp4" poster="../Images/web/omr/video/old-fellas-stripes.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Adult fish swimming over the moving stripes"></video><figcaption>Adult fish over the stripes</figcaption></figure>
+                </div>
+            </section>
+
             <!-- ============ Panorama ============ -->
             <section class="cd-light om-section">
-                <p class="om-label">02 / Project Panorama</p>
+                <p class="om-label">03 / Project Panorama</p>
                 <h2 class="om-h">Four cameras, one seamless view.</h2>
                 <div class="om-split">
                     <ol class="om-steps">
@@ -101,7 +114,7 @@
 
             <!-- ============ 3D pose ============ -->
             <section class="cd-dark om-section">
-                <p class="om-label">03 / 3D pose estimation</p>
+                <p class="om-label">04 / 3D pose estimation</p>
                 <h2 class="om-h">From two flat views to one 3D fish.</h2>
                 <div class="om-split">
                     <div>
@@ -133,5 +146,11 @@
             <p>&copy; 2024 Sukira Harris. All rights reserved.</p>
         </footer>
         <script src="../main.js"></script>
+        <script>
+            // Respect "reduce motion": show the first frame instead of looping
+            if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelectorAll('.om-vid').forEach(function (v) { v.removeAttribute('autoplay'); v.pause(); });
+            }
+        </script>
     </body>
 </html>

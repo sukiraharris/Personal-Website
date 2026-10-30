@@ -338,3 +338,68 @@
 .om-head + .om-section .om-split {
   align-items: start;
 }
+
+/* ---------- Videos ---------- */
+.om-vid {
+  display: block;
+  width: 100%;
+  background: #000;
+}
+
+.om-photos .om-vid {
+  aspect-ratio: 1 / 2;
+  object-fit: cover;
+  margin-bottom: 40px;
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.45);
+}
+
+.om-text-wide {
+  max-width: 1320px;
+  margin: 0 auto clamp(24px, 4vh, 40px);
+}
+
+.om-text-wide {
+  max-width: min(46em, 1320px);
+  margin-left: max(0px, calc((100% - 1320px) / 2));
+}
+
+.om-vids {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(14px, 2vw, 28px);
+  max-width: 1320px;
+  margin: 0 auto;
+  align-items: start;
+}
+
+.om-vids figure {
+  margin: 0;
+}
+
+.om-vids .om-vid {
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.22);
+}
+
+.om-vid-wide {
+  grid-column: 1 / -1;
+}
+
+.om-vids figcaption {
+  margin-top: 10px;
+  font-family: 'Courier Prime', 'Courier New', monospace;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+@media (max-width: 900px) {
+  .om-vids { grid-template-columns: 1fr; }
+}
+
+/* the stripes clip is very tall: show it as a portrait crop */
+.om-vids .om-vid-tall {
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  object-position: 50% 30%;
+}
