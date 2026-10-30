@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Optomotor Response in 3D — Sukira Harris</title>
+        <link rel="stylesheet" href="../style.css">
+        <link rel="stylesheet" href="../coding.css">
+        <link rel="stylesheet" href="../omr.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Oswald:wght@500&family=Courier+Prime&family=La+Belle+Aurore&family=Jost:wght@400&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <header class="top-bar">
+            <div class="nav">
+                <a href="about.html" class="logo">
+                  <img src="../Images/inverted.png" alt="Sukira logo">
+                </a>
+                <nav class="links">
+                    <a href="portfolio.html" class="active">Portfolio</a>
+                    <a href="contact.html">Contact</a>
+                </nav>
+            </div>
+        </header>
+
+        <main class="coding-main">
+
+            <!-- ============ Header ============ -->
+            <section class="cd-light om-head">
+                <div class="om-head-grid">
+                    <div>
+                        <a class="cd-eyebrow om-back-top" href="coding.html"><span>// 01</span> Selected Projects / Research</a>
+                        <h1 class="cd-title om-title">Optomotor Response <span class="nowrap">in 3D</span></h1>
+                        <p class="om-kind">Harvard University &middot; Engert Lab</p>
+                        <p class="om-lede">How do fish of different ages and species follow a moving visual pattern when they can swim in three dimensions? I built the camera and tracking pipeline to measure it.</p>
+                    </div>
+                    <figure class="om-hero">
+                        <img src="../Images/web/omr/triangulation.jpg" alt="3D plot of five fish skeletons triangulated from two camera views" />
+                        <figcaption>Triangulation &middot; five fish reconstructed in 3D</figcaption>
+                    </figure>
+                </div>
+
+                <ul class="om-stats">
+                    <li><strong>4</strong><span>Cameras stitched</span></li>
+                    <li><strong>2</strong><span>Views triangulated</span></li>
+                    <li><strong>2</strong><span>Species</span></li>
+                    <li><strong>3D</strong><span>Pose per fish</span></li>
+                </ul>
+            </section>
+
+            <!-- ============ The question ============ -->
+            <section class="cd-light om-section">
+                <div class="om-split">
+                    <div>
+                        <p class="om-label">The question</p>
+                        <p class="om-text">The optomotor response (OMR) is a reflex where fish swim to follow moving stripes. It is usually studied in shallow dishes. This project monitors medaka and zebrafish across age groups in a <em>deep</em> arena, so we can see what they do with the extra dimension.</p>
+                    </div>
+                    <ol class="om-questions">
+                        <li><span>01</span>Compare responses across age groups</li>
+                        <li><span>02</span>Identify the preferred response depth</li>
+                        <li><span>03</span>Test preference for lower optic-flow regions</li>
+                        <li><span>04</span>Measure behaviour under conflicting visual stimuli</li>
+                        <li><span>05</span>Compare endurance and exhaustion between species</li>
+                    </ol>
+                </div>
+            </section>
+
+            <!-- ============ The Dragstrip ============ -->
+            <section class="cd-dark om-section">
+                <div class="om-split om-split-media">
+                    <div class="om-photos">
+                        <img src="../Images/web/omr/rig.jpg" alt="The recording rig with cameras mounted around the arena" />
+                        <img src="../Images/web/omr/dragstrip-top.jpg" alt="Top view of the Dragstrip arena with moving stripes" />
+                    </div>
+                    <div>
+                        <p class="om-label">01 / The Dragstrip</p>
+                        <h2 class="om-h">A long, deep arena with stripes projected underneath.</h2>
+                        <p class="om-text">Cameras record from the top and the side, triggered together through WaveForms so every frame lines up. Recordings are saved as HDF5 and converted to AVI with a MATLAB script for labelling.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ============ Panorama ============ -->
+            <section class="cd-light om-section">
+                <p class="om-label">02 / Project Panorama</p>
+                <h2 class="om-h">Four cameras, one seamless view.</h2>
+                <div class="om-split">
+                    <ol class="om-steps">
+                        <li><strong>Undistort</strong>Calibrate each camera and remove lens distortion from every frame.</li>
+                        <li><strong>Mask</strong>Hand-draw left, right, top and bottom borders per camera to keep only the valid region. Cached so they are drawn once.</li>
+                        <li><strong>Warp</strong>A Coons-patch warp maps each trapezoid-shaped view into a clean rectangular strip of equal width.</li>
+                        <li><strong>Align</strong>Normalised cross-correlation on overlapping regions estimates the vertical and horizontal seam offsets, which nudge the warp maps into line.</li>
+                        <li><strong>Blend</strong>Strips are feather-blended across the seams and streamed to a stitched video in memory-safe batches.</li>
+                    </ol>
+                    <div class="om-figs">
+                        <figure><img src="../Images/web/omr/borders.jpg" alt="Manual borders and kept regions for cameras 0 to 3" /><figcaption>Manual borders &rarr; kept regions</figcaption></figure>
+                        <figure><img src="../Images/web/omr/stitched.jpg" alt="Four camera strips stitched into one panorama, from START to FINISH" /><figcaption>Stitched panorama</figcaption></figure>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ============ 3D pose ============ -->
+            <section class="cd-dark om-section">
+                <p class="om-label">03 / 3D pose estimation</p>
+                <h2 class="om-h">From two flat views to one 3D fish.</h2>
+                <div class="om-split">
+                    <div>
+                        <ol class="om-steps om-steps-dark">
+                            <li><strong>Label &amp; train</strong>Top-down SLEAP models for the top and side cameras, anchored on the tail with ±180° rotation so fish can be found facing any direction.</li>
+                            <li><strong>Track</strong>Flow tracking with Hungarian matching and OKS similarity keeps identities stable when fish overlap.</li>
+                            <li><strong>Calibrate</strong>A 10&times;7 ChArUco board, photographed in both views at once, calibrates the camera pair.</li>
+                            <li><strong>Triangulate</strong>sleap-anipose combines matched 2D tracks into 3D points, which I visualise and check in Python.</li>
+                        </ol>
+                    </div>
+                    <div class="om-figs">
+                        <figure><img src="../Images/web/omr/sleap-top.jpg" alt="SLEAP tracking six fish from the top camera" /><figcaption>SLEAP tracking &middot; top view</figcaption></figure>
+                        <figure><img src="../Images/web/omr/charuco.jpg" alt="ChArUco calibration board seen from the side camera" /><figcaption>ChArUco calibration</figcaption></figure>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ============ Tools ============ -->
+            <section class="cd-light om-section om-tools-sec">
+                <p class="om-label">Built with</p>
+                <ul class="om-tools">
+                    <li>MATLAB</li><li>Python</li><li>SLEAP</li><li>sleap-anipose</li><li>HDF5</li><li>ffmpeg</li><li>Plotly</li>
+                </ul>
+                <a class="om-back" href="coding.html"><span>&larr;</span> Back to Selected Projects</a>
+            </section>
+        </main>
+
+        <footer class="bottom-bar">
+            <p>&copy; 2024 Sukira Harris. All rights reserved.</p>
+        </footer>
+        <script src="../main.js"></script>
+    </body>
+</html>

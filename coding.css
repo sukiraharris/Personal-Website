@@ -482,3 +482,61 @@ body {
 .nowrap {
   white-space: nowrap;
 }
+
+/* ---------- Optomotor Response project (top of the list) ---------- */
+.cd-omr {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
+  margin-top: clamp(16px, 3vh, 32px);
+  padding-bottom: clamp(32px, 5vh, 56px);
+  border-bottom: 1px solid rgba(29, 26, 25, 0.2);
+}
+
+.cd-omr .cd-num { color: var(--ink); }
+.cd-omr .cd-num span:first-child { color: var(--red); }
+.cd-omr .cd-name { color: var(--red); }
+.cd-omr .cd-kind { color: var(--ink); }
+.cd-omr .cd-desc { color: var(--muted); }
+
+.cd-plot {
+  position: relative;
+  display: block;
+  padding: 10px 10px 34px;
+  background: #fff;
+  box-shadow: 0 16px 34px rgba(0, 0, 0, 0.18);
+  transform: rotate(1deg);
+  transition: transform 0.3s ease;
+}
+
+.cd-plot:hover {
+  transform: rotate(0deg) translateY(-4px);
+}
+
+.cd-plot img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 11;
+  object-fit: cover;
+  object-position: 50% 30%;
+}
+
+.cd-plot .cd-tape {
+  top: -14px;
+  right: auto;
+  left: 18%;
+  transform: rotate(-6deg);
+}
+
+.cd-plot-cap {
+  position: absolute;
+  left: 14px;
+  bottom: 9px;
+  font-family: 'Courier Prime', 'Courier New', monospace;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+@media (max-width: 900px) {
+  .cd-omr { grid-template-columns: 1fr; }
+}

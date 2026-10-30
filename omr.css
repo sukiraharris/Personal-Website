@@ -1,0 +1,340 @@
+/* Optomotor Response project page (builds on coding.css) */
+.om-section,
+.om-head {
+  padding: clamp(48px, 8vh, 96px) clamp(20px, 6vw, 96px);
+}
+
+.om-head {
+  padding-top: clamp(32px, 5vh, 56px);
+}
+
+.om-head-grid,
+.om-split {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
+  align-items: center;
+  gap: clamp(28px, 5vw, 80px);
+  max-width: 1320px;
+  margin: 0 auto;
+}
+
+.om-section > .om-label,
+.om-section > .om-h,
+.om-tools,
+.om-stats {
+  max-width: 1320px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.om-back-top:hover {
+  color: var(--ink);
+}
+
+.om-title {
+  margin: 8px 0 14px;
+  font-size: clamp(46px, 5.6vw, 92px);
+}
+
+.om-kind {
+  margin: 0 0 22px;
+  font-family: 'Jost', system-ui, sans-serif;
+  font-size: clamp(13px, 1.1vw, 16px);
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+
+.om-lede {
+  max-width: 30em;
+  margin: 0;
+  padding-left: 20px;
+  border-left: 2px solid var(--red);
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(18px, 1.6vw, 24px);
+  line-height: 1.45;
+  color: var(--ink);
+}
+
+.om-hero {
+  margin: 0;
+  padding: 10px 10px 36px;
+  background: #fff;
+  box-shadow: 0 16px 34px rgba(0, 0, 0, 0.16);
+  transform: rotate(1deg);
+}
+
+.om-hero img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 12;
+  object-fit: cover;
+  object-position: 50% 30%;
+}
+
+.om-hero figcaption,
+.om-figs figcaption {
+  margin-top: 10px;
+  font-family: 'Courier Prime', 'Courier New', monospace;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* stats */
+.om-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  list-style: none;
+  margin-top: clamp(36px, 6vh, 64px);
+  padding: clamp(18px, 3vh, 28px) 0;
+  border-top: 2px solid rgba(29, 26, 25, 0.55);
+  border-bottom: 2px solid rgba(29, 26, 25, 0.55);
+}
+
+.om-stats li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  text-align: center;
+}
+
+.om-stats li + li {
+  border-left: 1px solid rgba(29, 26, 25, 0.25);
+}
+
+.om-stats strong {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(36px, 3.6vw, 56px);
+  font-weight: 500;
+  line-height: 1;
+  font-variant-numeric: lining-nums;
+  color: var(--red);
+}
+
+.om-stats span {
+  font-family: 'Courier Prime', 'Courier New', monospace;
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+
+/* shared text */
+.om-label {
+  margin: 0 0 14px;
+  font-family: 'Courier Prime', 'Courier New', monospace;
+  font-size: 14px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--red);
+}
+
+.cd-dark .om-label {
+  color: #e2a3ab;
+}
+
+.om-h {
+  margin: 0 0 clamp(24px, 4vh, 40px);
+  max-width: 18em;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(30px, 3.4vw, 52px);
+  font-weight: 500;
+  line-height: 1.1;
+  text-decoration: none;
+  color: var(--ink);
+}
+
+.cd-dark .om-h {
+  color: var(--cream);
+}
+
+.om-text {
+  max-width: 34em;
+  margin: 0;
+  font-family: 'Jost', system-ui, sans-serif;
+  font-size: clamp(16px, 1.3vw, 19px);
+  line-height: 1.65;
+  color: var(--muted);
+}
+
+.cd-dark .om-text {
+  color: rgba(239, 231, 220, 0.85);
+}
+
+/* research questions */
+.om-questions {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid rgba(29, 26, 25, 0.25);
+}
+
+.om-questions li {
+  display: grid;
+  grid-template-columns: 44px 1fr;
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(29, 26, 25, 0.25);
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(17px, 1.45vw, 22px);
+  color: var(--ink);
+}
+
+.om-questions span {
+  font-family: 'Courier Prime', 'Courier New', monospace;
+  font-size: 14px;
+  padding-top: 4px;
+  color: var(--red);
+}
+
+/* numbered steps */
+.om-steps {
+  counter-reset: step;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.om-steps li {
+  counter-increment: step;
+  position: relative;
+  padding: 0 0 22px 52px;
+  font-family: 'Jost', system-ui, sans-serif;
+  font-size: clamp(15px, 1.2vw, 18px);
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+.om-steps li::before {
+  content: counter(step, decimal-leading-zero);
+  position: absolute;
+  left: 0;
+  top: 2px;
+  font-family: 'Courier Prime', 'Courier New', monospace;
+  font-size: 14px;
+  color: var(--red);
+}
+
+.om-steps strong {
+  display: block;
+  margin-bottom: 2px;
+  font-family: 'Oswald', 'Arial Narrow', sans-serif;
+  font-weight: 500;
+  font-size: clamp(16px, 1.3vw, 20px);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+
+.om-steps-dark li { color: rgba(239, 231, 220, 0.82); }
+.om-steps-dark li::before { color: #e2a3ab; }
+.om-steps-dark strong { color: var(--cream); }
+
+/* figures */
+.om-figs {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.om-figs figure {
+  margin: 0;
+}
+
+.om-figs img {
+  display: block;
+  width: 100%;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
+}
+
+.cd-dark .om-figs figcaption {
+  color: rgba(239, 231, 220, 0.65);
+}
+
+.om-split-media {
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+}
+
+.om-photos {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 14px;
+  align-items: end;
+}
+
+.om-photos img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.45);
+}
+
+.om-photos img:nth-child(2) {
+  aspect-ratio: 1 / 2;
+  margin-bottom: 40px;
+}
+
+/* tools */
+.om-tools-sec {
+  padding-top: clamp(36px, 6vh, 64px);
+}
+
+.om-tools {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  list-style: none;
+  padding: 0;
+}
+
+.om-tools li {
+  padding: 8px 16px;
+  border: 1px solid rgba(29, 26, 25, 0.4);
+  border-radius: 999px;
+  font-family: 'Courier Prime', 'Courier New', monospace;
+  font-size: 14px;
+  letter-spacing: 0.06em;
+  color: var(--ink);
+}
+
+.om-back {
+  display: inline-flex;
+  gap: 12px;
+  margin-top: clamp(32px, 5vh, 48px);
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--ink);
+  font-family: 'Courier Prime', 'Courier New', monospace;
+  font-size: 14px;
+  letter-spacing: 0.08em;
+  color: var(--ink);
+}
+
+.om-back:hover {
+  color: var(--red);
+  border-bottom-color: var(--red);
+}
+
+.om-tools-sec .om-label,
+.om-tools-sec .om-back {
+  max-width: 1320px;
+}
+
+@media (max-width: 900px) {
+  .om-head-grid,
+  .om-split,
+  .om-split-media { grid-template-columns: 1fr; }
+  .om-stats { grid-template-columns: repeat(2, 1fr); row-gap: 22px; }
+  .om-stats li:nth-child(3) { border-left: none; }
+}
+
+/* the question follows the header directly, so less space between them */
+.om-head + .om-section {
+  padding-top: 0;
+}
+
+.om-head + .om-section .om-split {
+  align-items: start;
+}
