@@ -635,3 +635,43 @@ body {
 .ed-map + .ed-stats-sec {
   padding-bottom: clamp(56px, 9vh, 100px);
 }
+
+/* ---------- DAV 5K ---------- */
+.ed-dav {
+  border-top: 1px solid var(--rule-light);
+}
+
+.ed-dav .ed-pair .ed-photo:first-child img {
+  object-position: 38% 40%;
+}
+
+.ed-dav .ed-pair .ed-photo:nth-child(2) img {
+  object-position: 50% 45%;
+}
+
+.ed-link {
+  display: inline-flex;
+  gap: 12px;
+  margin-top: 8px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--red);
+  font-family: var(--sans);
+  font-size: 13px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--red);
+}
+
+.ed-link span {
+  transition: transform 0.2s ease;
+}
+
+.ed-link:hover span {
+  transform: translateX(4px);
+}
+
+/* sits right under My stats: one rule is enough */
+.ed-stats-sec + .ed-dav {
+  border-top: none;
+  padding-top: clamp(8px, 2vh, 24px);
+}
