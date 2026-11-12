@@ -675,3 +675,11 @@ body {
   border-top: none;
   padding-top: clamp(8px, 2vh, 24px);
 }
+
+/* "/377" after the placing, smaller and muted */
+.ed-compare strong small {
+  margin-left: 4px;
+  font-size: 0.42em;
+  letter-spacing: 0.02em;
+  color: var(--muted);
+}
