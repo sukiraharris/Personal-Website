@@ -540,3 +540,63 @@ body {
 @media (max-width: 900px) {
   .cd-omr { grid-template-columns: 1fr; }
 }
+
+/* ---------- Neuro-Verse (image left, text right) ---------- */
+.cd-nv {
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+  margin-top: clamp(32px, 5vh, 56px);
+}
+
+.cd-nv .cd-desc + .cd-desc {
+  margin-top: -8px;
+}
+
+.cd-browser {
+  display: block;
+  overflow: hidden;
+  border-radius: 10px;
+  background: #0b0d14;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.15), 0 20px 40px rgba(0, 0, 0, 0.28);
+  transition: transform 0.3s ease;
+}
+
+.cd-browser:hover {
+  transform: translateY(-4px);
+}
+
+.cd-browser-bar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 14px;
+  background: #1c1c22;
+}
+
+.cd-browser-bar i {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #ff5f57;
+}
+
+.cd-browser-bar i:nth-child(2) { background: #febc2e; }
+.cd-browser-bar i:nth-child(3) { background: #28c840; }
+
+.cd-browser-bar span {
+  margin-left: 12px;
+  padding: 3px 12px;
+  border-radius: 6px;
+  background: #2a2a32;
+  font-family: 'Courier Prime', 'Courier New', monospace;
+  font-size: 11px;
+  color: #b9b4c4;
+}
+
+.cd-browser img {
+  display: block;
+  width: 100%;
+}
+
+@media (max-width: 900px) {
+  .cd-nv { grid-template-columns: 1fr; }
+}
